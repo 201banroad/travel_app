@@ -64,3 +64,5 @@ end
 
 gem 'mini_magick'
 
+# ログイン機能作るために必要
+gem 'devise'
