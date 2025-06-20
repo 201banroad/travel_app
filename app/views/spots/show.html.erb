@@ -33,7 +33,9 @@
   </div>
   <div class="meta-item">
     <span class="meta-label">Location</span>
-    <span class="meta-value"><%= @spot.location %></span>
+    <span class="meta-value">
+      <%= link_to @spot.location, "https://www.google.com/maps/search/?api=1&query=#{ERB::Util.url_encode(@spot.location)}", target: "_blank", rel: "noopener" %>
+    </span>
   </div>
 </div>
 
