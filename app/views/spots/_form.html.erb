@@ -1,0 +1,37 @@
+<%= form_with model: @spot do |form| %>
+    <% if @spot.errors.any? %>
+       <div>
+          <ul>
+             <% @spot.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+             <% end %>
+          </ul>
+       </div>
+    
+    <% end %>
+   
+     
+     <div>
+        <%= form.label :title, 'タイトル' %><br> 
+        <%= form.text_field :title %>
+     </div>
+     <div>
+        <%= form.label :location, '場所' %><br> 
+        <%= form.text_field :location %>
+     </div>
+     <div>
+        <%= form.label :description, '魅力を詳しく教えて...' %><br> 
+        <%= form.text_area :description %>
+     </div>
+     <div>
+     <%= form.label :name, 'あなたの名前' %><br> 
+     <%= form.text_field :name %>
+     </div>
+     <div>
+     <%= form.label :images, '写真' %><br> 
+     <%= form.file_field :images, multiple: true %>
+     </div>
+     <div>
+         <%= form.submit '投稿する' %>
+     </div>
+ <% end %>

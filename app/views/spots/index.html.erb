@@ -1,0 +1,38 @@
+<div= class= "container">
+
+    <div class="header">
+        <%= link_to '新規投稿', new_spot_path, class: "green-button" %>  
+    </div>
+
+    <div class= "topper">   
+    <h1>小さな小さな　旅を教えて</h1>
+    </div> 
+
+    <div class = "message">
+        <p>
+            あなたの過ごした空気を、あなたのエピソードを、なぜそこに行った?なぜそれがいいと思った?<br>
+            理由なんてなくても、あってもいい。<br>
+            あなたの感性と小さな旅を、写真と共に教えてください。<br>
+            もちろんスケールの大きな旅も…！
+        </p>
+    </div>
+
+    <div class="spot-list">
+        <% @spots.each do |spot| %>
+            <div class="spot-card">
+                <% if spot.images.attached? %>
+                    <%= link_to spot_path(spot) do %>
+                        <%= image_tag spot.images.first %>
+                    <% end %>
+                <% end %>
+                
+
+                <h3><%= spot.title %></h3>
+                <p><%= spot.name %></p>
+                
+            </div>
+        <% end %>       
+    </div>
+
+    
+</div>

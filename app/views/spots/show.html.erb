@@ -1,0 +1,43 @@
+<%= link_to '新規投稿', new_spot_path, class: "green-button" %>
+<h1>
+  <%= link_to "小さな小さな　旅を教えて", spots_path, class: "topper-link" %>
+</h1>
+
+<p>
+<div class="diary-page">
+
+  <h1 class="diary-title"><%= @spot.title %></h1>
+
+  
+
+  <div class="diary-image">
+    <% if @spot.images.attached? %>
+      <% @spot.images.each do |image| %>
+        <%= image_tag image.variant(resize_to_limit: [400, 400]), class: "diary-photo" %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="diary-text">
+    <p><%= simple_format(@spot.description) %></p>
+    
+  </div>
+  
+
+</div>
+
+<div class="diary-meta">
+  <div class="meta-item">
+    <span class="meta-label">Name</span>
+    <span class="meta-value"><%= @spot.name %></span>
+  </div>
+  <div class="meta-item">
+    <span class="meta-label">Location</span>
+    <span class="meta-value"><%= @spot.location %></span>
+  </div>
+</div>
+
+
+ 
+  <%= link_to '編集', edit_spot_path(@spot) %>
+  <%= link_to '削除', spot_path(@spot), data: { turbo_method: "delete", turbo_confirm: '本当に削除しますか?'} %>
