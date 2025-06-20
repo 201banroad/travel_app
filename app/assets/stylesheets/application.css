@@ -178,6 +178,7 @@
     margin-bottom: 20px;
     font-size: 15px;
     color: #5a5242;
+    
   }
   
   .meta-item {
@@ -196,8 +197,21 @@
   
   .meta-value {
     font-weight: bold;
+    padding: 3px 8px;
     color: #3b372d;
     font-family: 'Zen Old Mincho', serif;
+    text-decoration: none;
+    background-color: rgb(220, 220, 220);
+    border-radius: 5px;
+    box-shadow: 1px 2px 13px rgba(174, 171, 171, 0.551);
+  }
+
+  .meta-value:hover {
+    background-color: #e7e7e7;
+    transform: translateY(-2px);
+    box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+
   }
   
   .topper-link {

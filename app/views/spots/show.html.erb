@@ -33,13 +33,11 @@
   </div>
   <div class="meta-item">
     <span class="meta-label">Location</span>
-    <span class="meta-value">
-      <%= link_to @spot.location, "https://www.google.com/maps/search/?api=1&query=#{ERB::Util.url_encode(@spot.location)}", target: "_blank", rel: "noopener" %>
-    </span>
+    <%= link_to @spot.location, "https://www.google.com/maps/search/?api=1&query=#{ERB::Util.url_encode(@spot.location)}", target: "_blank", rel: "noopener", class: "meta-value" %>
   </div>
 </div>
 
 
- 
-  <%= link_to '編集', edit_spot_path(@spot) %>
-  <%= link_to '削除', spot_path(@spot), data: { turbo_method: "delete", turbo_confirm: '本当に削除しますか?'} %>
+
+<%= link_to '編集', edit_spot_path(@spot), class: "meta-value" %>
+<%= link_to '削除', spot_path(@spot), data: { turbo_method: "delete", turbo_confirm: '本当に削除しますか?'}, class: "meta-value" %>
