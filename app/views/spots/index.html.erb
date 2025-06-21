@@ -1,12 +1,20 @@
 <div= class= "container">
 
     <div class="header">
-        <%= link_to '新規投稿', new_spot_path, class: "green-button" %>  
-        <%= link_to 'ログイン', new_user_session_path, class: "green-button" %>
+        <% if user_signed_in? %>
+            <%= link_to '投稿', new_spot_path, class: "green-button" %>  
+            <%= link_to 'マイページ', user_path(current_user), class: "green_button" %>
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "green_button"  %>
+
+        <% else %>
+            <%= link_to '投稿', new_spot_path, class: "green-button" %>
+            <%= link_to 'ログイン', new_user_session_path, class: "green-button" %>
+
+        <% end %>
     </div>
 
     <div class= "topper">   
-    <h1>小さな小さな　旅を教えて</h1>
+        <h1>小さな小さな　旅を教えて</h1>
     </div> 
 
     <div class = "message">

@@ -47,6 +47,7 @@ class SpotsController < ApplicationController
         redirect_to spots_path
     end
 
+   
     private 
     # ストロングパラメーター、permitの中の項目だけ許可するたとえば項目をLikeって悪いやつに書き換えられたら保存されない、画像は複数枚OKなので[]配列で許可してる。
     def spot_params
@@ -57,6 +58,3 @@ class SpotsController < ApplicationController
 
 
 end
-
-# 基本の機能はOK
-# 今後つけたい機能。マップを追加、いいねを追加、タイムラインというか、表示の機能を追加。UIを豪華にする

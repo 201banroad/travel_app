@@ -13,5 +13,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root 'spots#index'#URLをルートでも繋がるようにする処理
+
+  # 投稿などのルーティング自動生成できるコード
   resources :spots
+
+  # 「ユーザーが /mypage にアクセスしたら UsersController の show を実行して、mypage_path って名前で使えるようにしておいてね！」って処理
+  get "mypage", to: "users#show", as: "mypage"
+
 end
