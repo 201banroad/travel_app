@@ -1,0 +1,11 @@
+<h1><%= @user.name %> さんのマイページ</h1>
+
+<p>名前: <%= @user.name %></p>
+<p>メールアドレス: <%= @user.email %></p>
+
+<h2>あなたの投稿した旅</h2>
+<% @spots.each do |spot| %>
+  <div>
+    <%= link_to spot.title, spot_path(spot) %>
+  </div>
+<% end %>

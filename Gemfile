@@ -66,3 +66,8 @@ gem 'mini_magick'
 
 # ログイン機能作るために必要
 gem 'devise'
+
+# ブラウザでメールを確認できるGem 本番環境では使わない
+group :development do
+  gem 'letter_opener'
+end

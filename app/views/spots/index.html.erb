@@ -1,10 +1,10 @@
-<div= class= "container">
+<div class= "container">
 
     <div class="header">
         <% if user_signed_in? %>
             <%= link_to '投稿', new_spot_path, class: "green-button" %>  
-            <%= link_to 'マイページ', user_path(current_user), class: "green_button" %>
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "green_button"  %>
+            <%= link_to 'マイページ', mypage_path, class: "green-button" %>
+            <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }, class: "green-button"%>
 
         <% else %>
             <%= link_to '投稿', new_spot_path, class: "green-button" %>

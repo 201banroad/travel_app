@@ -5,5 +5,7 @@ class Spot < ApplicationRecord
     validates :images, presence: { message: "写真は必須です" }
         # 写真何枚でもOKな処理
     has_many_attached :images
+
+    belongs_to :user  # ← この投稿は誰か1人のユーザーに属してるよ
 end
 # ここはモデル

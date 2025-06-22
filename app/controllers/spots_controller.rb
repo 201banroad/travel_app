@@ -17,9 +17,9 @@ class SpotsController < ApplicationController
 
     # 投稿保存
     def create
-        @spot = Spot.new(spot_params)
+        @spot = current_user.spots.build(spot_params)
         if @spot.save
-            redirect_to @spot
+            redirect_to @spot, notice: "投稿できたよ！"
         else
             render 'new', status: :unprocessable_entity
         end
