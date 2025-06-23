@@ -9,3 +9,10 @@
     <%= link_to spot.title, spot_path(spot) %>
   </div>
 <% end %>
+
+<%= link_to "アカウント削除", registration_path(current_user),
+    data: { 
+      turbo_method: :delete,
+      turbo_confirm: "本当にアカウントを削除してもよいですか？投稿も全て削除されます"
+    },
+    class: "danger-button" %>
