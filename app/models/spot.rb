@@ -7,5 +7,10 @@ class Spot < ApplicationRecord
     has_many_attached :images
 
     belongs_to :user  # ← この投稿は誰か1人のユーザーに属してるよ
+
+    # いいねの設定
+    has_many :likes, dependent: :destroy
+    has_many :liked_users, through: :likes, source: :user
+
 end
 # ここはモデル

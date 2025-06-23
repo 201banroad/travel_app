@@ -13,5 +13,10 @@ class User < ApplicationRecord
 
   # ユーザーを削除したときに、その人の投稿も全部一緒に削除される
   has_many :spots, dependent: :destroy
+
+  # いいねの設定
+  has_many :likes, dependent: :destroy
+  has_many :liked_spots, through: :likes, source: :spot
+
  
 end
