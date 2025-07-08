@@ -1,4 +1,4 @@
-<%= link_to '新規投稿', new_spot_path, class: "green-button" %>
+﻿<%= link_to '新規投稿', new_spot_path, class: "green-button" %>
 <h1>
   <%= link_to "小さな小さな　旅を教えて", spots_path, class: "topper-link" %>
 </h1>
@@ -36,6 +36,16 @@
     <%= link_to @spot.location, "https://www.google.com/maps/search/?api=1&query=#{ERB::Util.url_encode(@spot.location)}", target: "_blank", rel: "noopener", class: "meta-value" %>
   </div>
 </div>
+
+
+<% if user_signed_in? %>
+  <% if current_user.likes.exists?(spot: @spot) %>  
+    <%= button_to "いいね解除", spot_like_path(@spot), method: :delete, class: "unlike-button" %>
+  <% else %>
+    <%= button_to "いいね", spot_like_path(@spot), method: :post, class: "like-button" %>
+  <% end %>
+<% end %>
+
 
 
 

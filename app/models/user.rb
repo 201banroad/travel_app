@@ -4,6 +4,8 @@ class User < ApplicationRecord
     length: { maximum: 13 }, # 13文字以内
     uniqueness: true        # 他のユーザーと同じ名前はダメ
 
+    
+# 同じmailでは登録できないように
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
