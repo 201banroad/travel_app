@@ -1,6 +1,5 @@
-﻿<%= link_to '新規投稿', new_spot_path, class: "green-button" %>
-<h1>
-  <%= link_to "小さな小さな　旅を教えて", spots_path, class: "topper-link" %>
+﻿<h1>
+  <%= link_to "小さな小さな  旅を教えて", spots_path, class: "topper-link" %>
 </h1>
 
 <p>
@@ -20,34 +19,50 @@
 
   <div class="diary-text">
     <p><%= simple_format(@spot.description) %></p>
+  </div>
+
+  <div class="like-button">
+    <% if user_signed_in? %>
+      <% if current_user.likes.exists?(spot: @spot) %>  
+        <%= link_to spot_like_path(@spot), data: { turbo_method: :delete } do %>
+          <i class="fa-solid fa-heart"></i>
+        <% end %>
+
+      <% else %>
+        <%= link_to spot_like_path(@spot), data: { turbo_method: :post } do %>
+          <i class="fa-regular fa-heart"></i>
+        <% end %>
+      <% end %>
+      <span class="like-count" > <%= @spot.likes.count %></span>
+    <% end %>
+  </div>
+
+</div>
+
+<div class="spot-info">
+
+  <div class="info-item">
+    <span class="info-label">Name</span>
+    <span class="info-value">
+      <% if @spot.user.present? %>
+        <%= link_to @spot.user.name, user_path(@spot.user) %>
+      <% else %>
+        ゲスト
+      <% end %>
+    </span>
     
   </div>
-  
 
-</div>
-
-<div class="diary-meta">
-  <div class="meta-item">
-    <span class="meta-label">Name</span>
-    <span class="meta-value"><%= @spot.name %></span>
-  </div>
-  <div class="meta-item">
-    <span class="meta-label">Location</span>
-    <%= link_to @spot.location, "https://www.google.com/maps/search/?api=1&query=#{ERB::Util.url_encode(@spot.location)}", target: "_blank", rel: "noopener", class: "meta-value" %>
+  <div class="info-item">
+    <span class="info-label">Location</span>
+    <%= link_to @spot.location, "https://www.google.com/maps/search/?api=1&query=#{ERB::Util.url_encode(@spot.location)}", target: "_blank", rel: "noopener", class: "info-value" %>
   </div>
 </div>
 
 
-<% if user_signed_in? %>
-  <% if current_user.likes.exists?(spot: @spot) %>  
-    <%= button_to "いいね解除", spot_like_path(@spot), method: :delete, class: "unlike-button" %>
-  <% else %>
-    <%= button_to "いいね", spot_like_path(@spot), method: :post, class: "like-button" %>
-  <% end %>
-<% end %>
 
 
 
 
-<%= link_to '編集', edit_spot_path(@spot), class: "meta-value" %>
-<%= link_to '削除', spot_path(@spot), data: { turbo_method: "delete", turbo_confirm: '本当に削除しますか?'}, class: "meta-value" %>
+
+<%= link_to '削除', spot_path(@spot), data: { turbo_method: "delete", turbo_confirm: '本当に削除しますか?'}, class: "info-value" %>

@@ -20,5 +20,9 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_spots, through: :likes, source: :spot
 
+
+  # アイコン画像の設定
+  has_one_attached :avatar
+
  
 end

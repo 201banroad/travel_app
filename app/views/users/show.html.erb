@@ -1,18 +1,20 @@
 <h1><%= @user.name %> さんのマイページ</h1>
 
-<p>名前: <%= @user.name %></p>
-<p>メールアドレス: <%= @user.email %></p>
 
-<h2>あなたの投稿した旅</h2>
+
+
+<h2><%= @user.name %>さんの投稿した旅</h2>
 <% @spots.each do |spot| %>
   <div>
     <%= link_to spot.title, spot_path(spot) %>
   </div>
 <% end %>
 
-<%= link_to "アカウント削除", registration_path(current_user),
-    data: { 
-      turbo_method: :delete,
-      turbo_confirm: "本当にアカウントを削除してもよいですか？投稿も全て削除されます"
-    },
-    class: "danger-button" %>
+<% if user_signed_in? %>
+  <%= link_to "アカウント削除", registration_path(current_user),
+      data: { 
+        turbo_method: :delete,
+        turbo_confirm: "本当にアカウントを削除してもよいですか？投稿も全て削除されます"
+      },
+      class: "danger-button" %>
+<% end %>

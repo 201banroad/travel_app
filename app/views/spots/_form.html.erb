@@ -24,12 +24,12 @@
         <%= form.text_area :description %>
      </div>
      <div>
-     <%= form.label :name, 'あなたの名前' %><br> 
-     <%= form.text_field :name %>
+         <label>あなたの名前</label><br>
+         <input type="text" value="<%= current_user&.name || 'ゲスト' %>" readonly>
      </div>
      <div>
-     <%= form.label :images, '写真' %><br> 
-     <%= form.file_field :images, multiple: true %>
+         <%= form.label :images, '写真' %><br> 
+         <%= form.file_field :images, multiple: true %>
      </div>
      <div>
          <%= form.submit '投稿する' %>

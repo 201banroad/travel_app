@@ -1,7 +1,8 @@
 class LikesController < ApplicationController
+    # ユーザーがログインしているかどうか
     before_action :authenticate_user!
 
-    # いいねの処理
+    # いいねをする処理
     def create
         @spot = Spot.find(params[:spot_id])
         current_user.likes.create(spot: @spot)#ユーザー特定と、スポットIDを特定する処理（カラムに入れる処理）

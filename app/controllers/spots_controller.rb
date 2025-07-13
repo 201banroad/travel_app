@@ -17,29 +17,30 @@ class SpotsController < ApplicationController
 
     # 投稿保存
     def create
-        @spot = current_user.spots.build(spot_params)
+        @spot = Spot.new(spot_params)
+        @spot.user = current_user if user_signed_in?
+
         if @spot.save
-           
             redirect_to @spot
         else
             render 'new', status: :unprocessable_entity
         end
     end
 
-    # 編集  たとえば /spots/3/edit にアクセスされたとき、edit が呼ばれる。
-    def edit
-        @spot = Spot.find(params[:id])
-    end
+    # 編集機能はいらない
+    # def edit
+    #     @spot = Spot.find(params[:id])
+    # end
 
-    #更新保存
-    def update
-        @spot = Spot.find(params[:id])
-        if @spot.update(spot_params) # 更新する（）内はストロングパラメータ
-            redirect_to @spot #DBに登録できた場合は詳細ページに飛ぶ
-        else
-            render 'edit', status: :unprocessable_entity # 失敗したら編集ページに戻す
-        end
-    end
+    
+    # def update
+    #     @spot = Spot.find(params[:id])
+    #     if @spot.update(spot_params) 
+    #         redirect_to @spot 
+    #     else
+    #         render 'edit', status: :unprocessable_entity 
+    #     end
+    # end
 
     # 削除
     def destroy

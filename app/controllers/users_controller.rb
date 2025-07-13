@@ -1,9 +1,16 @@
 class UsersController < ApplicationController
-    before_action :authenticate_user!  # ログインしてない人は追い返す
+    
+  before_action :authenticate_user!, except: [:show]
 
     def show
-        @user = current_user  # 今ログインしてる人の情報
+        @user = User.find(params[:id])
         @spots = @user.spots  # このログイン中ユーザーの投稿をまとめて@spotsに入れる
+    end
+    
+    def mypage
+        @user = current_user
+        @spots = @user.spots
+        render :show
     end
 
 end

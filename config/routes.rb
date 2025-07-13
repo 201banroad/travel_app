@@ -17,11 +17,14 @@ Rails.application.routes.draw do
  
  
   # 「ユーザーが /mypage にアクセスしたら UsersController の show を実行して、mypage_path って名前で使えるようにしておいてね！」って処理
-  get "mypage", to: "users#show", as: "mypage"
+  get "mypage", to: "users#mypage", as: "mypage"
+
+  # 他人のマイページも見れるように、ヘルパーも使えるように
+  resources :users, only: [:show]
   
  # 投稿などのルーティング自動生成できるコード
 # いいねの操作をURLでできるように
-  resources :spots do
+  resources :spots, only: [:index, :show, :new, :create, :destroy] do
     resource :like, only: [:create, :destroy]
   end
 end
