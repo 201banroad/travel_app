@@ -26,7 +26,17 @@
 
 
 <% @spots.each do |spot| %>
-  <div>
-    <%= link_to spot.title, spot_path(spot) %>
+  <div class= "mypage-spots">
+    <%= link_to spot_path(spot) do %>
+
+      <div class= "spot-thumbnail">
+          <%= image_tag spot.images.first.variant(resize_to_limit: [150, 150])%>
+      </div>
+
+      <div class= "spot-title">
+        <%= spot.title%>
+      </div>
+
+    <% end %>
   </div>
 <% end %>
