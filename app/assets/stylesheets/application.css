@@ -118,7 +118,7 @@
     box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.2);
   }
   
-/* ここからPage Show */
+/* ここからSpot Show */
 .diary-page {
     background-color: #fffaf3;
     background-image: linear-gradient(to bottom, rgba(100, 85, 60, 0.08) 1px, transparent 1px);
@@ -235,13 +235,77 @@
     /* box-shadow: 1px 2px 13px rgba(202, 200, 200, 0.551); */
   }
 
-  /* アイコンの見た目 */
-  .avatar {
+
+
+  /* ここからマイページ */
+
+  /* .avatar {
   width: 80px;
   height: 80px;
   object-fit: cover;
   border-radius: 50%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+} */
+.profile-box {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 50px;
 }
 
-  
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+}
+
+.profile-text {
+  max-width: 600px;
+  font-family: 'Zen Old Mincho', serif;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #3a2e25;
+  background-color: #f8f5f0;
+  padding: 1px 25px;
+  border-radius: 10px;
+  border: 1px solid #d6cdbb;
+  box-shadow: 2px 4px 10px rgba(150, 140, 120, 0.2);
+  background-image: linear-gradient(to bottom right, #fdfaf5, #f2efe9);
+  opacity:0.7
+
+}
+
+  .settings-tab {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background-color: #f8f5f0;
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  z-index: 10;
+}
+
+.settings-tab ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.settings-tab li {
+  margin-bottom: 8px;
+}
+
+.settings-tab a {
+  text-decoration: none;
+  color: #3b372d;
+  font-weight: bold;
+}
+
+.settings-tab a:hover {
+  color: #2e6a4f;
+}
