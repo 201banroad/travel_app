@@ -234,4 +234,14 @@
     color: #e74c3c; /* 例：赤 */
     /* box-shadow: 1px 2px 13px rgba(202, 200, 200, 0.551); */
   }
+
+  /* アイコンの見た目 */
+  .avatar {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
   

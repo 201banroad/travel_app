@@ -1,5 +1,10 @@
-<h1><%= @user.name %> さんのマイページ</h1>
+<h1><%= @user.name %> さんのこれまでの旅</h1>
 
+<% if @user.avatar.attached? %>
+  <%= image_tag url_for(@user.avatar), class: "avatar" %>
+<% else %>
+  <%= image_tag "default_avatar.png", class: "avatar" %>
+<% end %>
 
 
 
@@ -9,6 +14,11 @@
     <%= link_to spot.title, spot_path(spot) %>
   </div>
 <% end %>
+
+<% if user_signed_in? %>
+  <%= link_to "アカウント編集", edit_user_registration_path %>
+<% end %>
+
 
 <% if user_signed_in? %>
   <%= link_to "アカウント削除", registration_path(current_user),
