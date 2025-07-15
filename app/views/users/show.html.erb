@@ -22,21 +22,47 @@
   <% end %>
 </div>
 
-<h1><%= @user.name %></h1>
+<div class="tab-wrapper">
+  <input type="radio" name="tab" id="tab1" checked>
+  <label for="tab1"><%= @user.name %></label>
 
+  <input type="radio" name="tab" id="tab2">
+  <label for="tab2">いいねした投稿</label>
 
-<% @spots.each do |spot| %>
-  <div class= "mypage-spots">
-    <%= link_to spot_path(spot) do %>
+  <div class="tab-content" id="content1">
+    <% @spots.each do |spot| %>
+      <div class= "mypage-spots">
+        <%= link_to spot_path(spot), class: "spot-link" do %>
 
-      <div class= "spot-thumbnail">
-          <%= image_tag spot.images.first.variant(resize_to_limit: [150, 150])%>
+          <div class= "spot-thumbnail">
+            <%= image_tag spot.images.first.variant(resize_to_limit: [150, 150])%>
+          </div>
+
+          <div class= "spot-title">
+            <%= truncate(spot.title, length: 12) %>
+          </div>
+        <% end %>
       </div>
-
-      <div class= "spot-title">
-        <%= spot.title%>
-      </div>
-
     <% end %>
   </div>
-<% end %>
+
+  <div class="tab-content" id="content2">
+    <% @user.liked_spots.each do |spot|%>
+      <div class= "mypage-spots">
+        <%= link_to spot_path(spot), class: "spot-link" do %>
+          <div class= "spot-thumbnail">
+            <%= image_tag spot.images.first.variant(resize_to_limit: [150, 150])%>
+          </div>
+
+          <div class= "spot-title">
+            <%= truncate(spot.title, length: 12) %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
