@@ -186,6 +186,7 @@
   }
   
   .info-value {
+    text-decoration: none;
     font-weight: bold;
     padding: 3px 8px;
     color: #3b372d;
@@ -241,6 +242,7 @@
 
  .profile-wrapper{
   display: flex;
+  margin-left: 10rem;
  }
 
 .profile-box {
@@ -310,29 +312,26 @@
 
 
 .wishlist-box {
-  /* background: #f6f8f5; */
-  margin: 3rem;
-  /* box-shadow: 2px 2px 2px #040404; */
-  /* font-family: 'Hiragino Kaku Gothic ProN', sans-serif; */
-  /* white-space: pre-wrap; */
-  /* 改行が保存される */
-
+  margin: 4rem;
+  margin-left: 30rem;
   max-width: 600px;
+  max-height: 250px;
+  overflow-y: auto;
   font-family: 'Zen Old Mincho', serif;
   font-size: 15px;
   line-height: 1.8;
   color: #3a2e25;
   background-color: #f8f5f0;
   padding: 1px 25px;
-  border-radius: 10px;
+  border-radius: 2px;
   border: 1px solid #d6cdbb;
-  box-shadow: 2px 4px 10px rgba(150, 140, 120, 0.2);
+  box-shadow: 2px 4px 10px rgba(150, 140, 120, 10);
   background-image: linear-gradient(to bottom right, #fdfaf5, #f2efe9);
-  opacity:0.7;
+  opacity:0.6;
 }
 
 .wishlist-title {
-  padding-top: 3rem;
+  padding-top: 1rem;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   font-family: 'Georgia', serif;
@@ -341,13 +340,20 @@
 
 .wishlist-edit{
   display: inline-block;
-    font-weight: bold;
-    padding: 3px 8px;
-    color: #3b372d;
-    font-family: 'Zen Old Mincho', serif;
-    background-color: rgb(220, 220, 220);
-    border-radius: 5px;
-    box-shadow: 1px 2px 13px rgba(174, 171, 171, 0.551);
+  font-weight: bold;
+  padding: 3px 8px;
+  margin-bottom: 20px;
+  color: #3b372d;
+  font-family: 'Zen Old Mincho', serif;
+  background-color: rgba(232, 227, 232, 0.957);
+  border-radius: 5px;
+  box-shadow: 1px 2px 13px rgba(180, 181, 190, 0.741);
+
+}
+
+.wishlist-edit:hover {
+  transition: all 0.4s ease;
+  box-shadow: 3px 2px 15px rgba(0, 0, 0, 0.314);
 
 }
 
@@ -356,12 +362,7 @@
   color: inherit; /* リンクの青色を消して、親と同じ色にする */
 }
 
-.wishlist-edit :hover {
-    background-color: #e7e7e7;
-    transform: translateY(-2px);
-    box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.2s ease;
-}
+
 
 .tab-content {
 

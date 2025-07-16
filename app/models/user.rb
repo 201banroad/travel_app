@@ -1,8 +1,12 @@
 class User < ApplicationRecord
   validates :name,
     presence: true,
-    length: { maximum: 13 }, # 13文字以内
+    length: { maximum: 20 }, # 13文字以内
     uniqueness: true        # 他のユーザーと同じ名前はダメ
+
+
+  validates :profile, length: {maximum: 300}
+  validates :wishlist_text, length: {maximum: 200}
 
     
 # 同じmailでは登録できないように

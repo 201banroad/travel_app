@@ -15,13 +15,16 @@
     <% else %>
       <%= image_tag "default_avatar.png", class: "avatar" %>
     <% end %>
+  </div>
 
+  <div class="profile-box">
     <% if @user.profile.present? %>
       <div class="profile-text"><%= simple_format(@user.profile) %></div>
     <% else %>
       <div class="profile-text">まだプロフィールが設定されていません。</div>
     <% end %>
   </div>
+  
 
 
   <div class="wishlist-box">
