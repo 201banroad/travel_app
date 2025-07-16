@@ -8,19 +8,43 @@
   </div>
 <% end %>
 
-<div class="profile-box">
-  <% if @user.avatar.attached? %>
-    <%= image_tag url_for(@user.avatar), class: "avatar" %>
-  <% else %>
-    <%= image_tag "default_avatar.png", class: "avatar" %>
-  <% end %>
+<div class="profile-wrapper">
+  <div class="profile-box">
+    <% if @user.avatar.attached? %>
+      <%= image_tag url_for(@user.avatar), class: "avatar" %>
+    <% else %>
+      <%= image_tag "default_avatar.png", class: "avatar" %>
+    <% end %>
 
-  <% if @user.profile.present? %>
-    <div class="profile-text"><%= simple_format(@user.profile) %></div>
-  <% else %>
-    <div class="profile-text">まだプロフィールが設定されていません。</div>
-  <% end %>
+    <% if @user.profile.present? %>
+      <div class="profile-text"><%= simple_format(@user.profile) %></div>
+    <% else %>
+      <div class="profile-text">まだプロフィールが設定されていません。</div>
+    <% end %>
+  </div>
+
+
+  <div class="wishlist-box">
+    <div class="wishlist-title">行ってみたい場所
+    </div>
+
+    <% if @user.wishlist_text.present? %>
+      <div class="wishlist-text">
+        <%= simple_format(@user.wishlist_text) %>
+      </div>
+    <% else %>
+      <div class="wishlist-text">まだ登録されていません。</div>
+    <% end %>
+
+    <div class="wishlist-edit">
+      <% if user_signed_in? && current_user == @user %>
+        <%= link_to("編集", edit_user_registration_path ) %>
+      <% end %>
+    </div>
+
+  </div>
 </div>
+
 
 <div class="tab-wrapper">
   <input type="radio" name="tab" id="tab1" checked>

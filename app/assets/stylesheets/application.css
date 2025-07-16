@@ -239,15 +239,11 @@
 
   /* ここからマイページ */
 
-  /* .avatar {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-} */
-.profile-box {
+ .profile-wrapper{
   display: flex;
+ }
+
+.profile-box {
   gap: 20px;
   align-items: center;
   margin-top: 50px;
@@ -313,8 +309,59 @@
 }
 
 
+.wishlist-box {
+  /* background: #f6f8f5; */
+  margin: 3rem;
+  /* box-shadow: 2px 2px 2px #040404; */
+  /* font-family: 'Hiragino Kaku Gothic ProN', sans-serif; */
+  /* white-space: pre-wrap; */
+  /* 改行が保存される */
 
+  max-width: 600px;
+  font-family: 'Zen Old Mincho', serif;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #3a2e25;
+  background-color: #f8f5f0;
+  padding: 1px 25px;
+  border-radius: 10px;
+  border: 1px solid #d6cdbb;
+  box-shadow: 2px 4px 10px rgba(150, 140, 120, 0.2);
+  background-image: linear-gradient(to bottom right, #fdfaf5, #f2efe9);
+  opacity:0.7;
+}
 
+.wishlist-title {
+  padding-top: 3rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Georgia', serif;
+  text-shadow: 1px 1px 1px #ccc;
+}
+
+.wishlist-edit{
+  display: inline-block;
+    font-weight: bold;
+    padding: 3px 8px;
+    color: #3b372d;
+    font-family: 'Zen Old Mincho', serif;
+    background-color: rgb(220, 220, 220);
+    border-radius: 5px;
+    box-shadow: 1px 2px 13px rgba(174, 171, 171, 0.551);
+
+}
+
+.wishlist-edit a {
+  text-decoration: none;
+  color: inherit; /* リンクの青色を消して、親と同じ色にする */
+}
+
+.wishlist-edit :hover {
+    background-color: #e7e7e7;
+    transform: translateY(-2px);
+    box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
 
 .tab-content {
 
@@ -370,7 +417,7 @@
 /* 各ラジオボタンに応じて表示 */
 #tab1:checked ~ #content1,
 #tab2:checked ~ #content2 {
-display: flex;  /* ← ここを block → flex に修正！ */
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 1rem;
@@ -402,4 +449,10 @@ input[type="radio"]:checked + label {
 /* ラジオボタンは非表示に */
 .tab-wrapper input[type="radio"] {
   display: none;
+}
+
+/* ここからユーザー編集ページ */
+.user-edit-wrapper{
+  display: flex;
+
 }
