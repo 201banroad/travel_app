@@ -19,7 +19,6 @@ class SpotsController < ApplicationController
     def create
         @spot = Spot.new(spot_params)
         @spot.user = current_user if user_signed_in?
-
         if @spot.save
             redirect_to @spot
         else

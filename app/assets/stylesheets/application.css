@@ -262,6 +262,13 @@
   opacity: 0.8;
 }
 
+.profile-name{
+  font-size: 18px;
+  margin-left: 7px;
+  text-shadow: 2px 4px 20px rgba(0, 0, 0, 0.298);
+  opacity: 0.9;
+}
+
 .profile-text {
  background-image: repeating-linear-gradient(
     to bottom,
@@ -269,9 +276,11 @@
     transparent 22px,
     #dcdcdc 23px
   );
-  max-width: 600px;
-  max-height: 140px;
-  line-height: 23px;
+  white-space: pre-wrap;
+  word-break: break-word; /* この二つは改行の処理 */
+  width: 200px;
+  max-height: 160px;
+  line-height: 15px;
   margin-left: 50px;
   padding: 1rem;
   font-family: 'Zen Old Mincho', serif;
@@ -286,16 +295,16 @@
 
   .settings-tab {
   position: absolute;
-  top: 30px;
-  right: 30px;
-  background-color: #f8f5f0;
+  top: 40px;
+  right: 50px;
+  background-color: #f9f1e4ed;
   padding: 1px 10px;
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   z-index: 10;
-  opacity:0.8;
+  opacity:0.6;
 
 }
 
@@ -322,7 +331,7 @@
 
 .wishlist-box {
   margin: 4rem;
-  margin-left: 30rem;
+  margin-left: 20rem;
   max-width: 600px;
   max-height: 250px;
   overflow-y: auto;
@@ -336,7 +345,7 @@
   border: 1px solid #d6cdbb;
   box-shadow: 2px 4px 10px rgba(150, 140, 120, 10);
   background-image: linear-gradient(to bottom right, #fdfaf5, #f2efe9);
-  opacity:0.6;
+  opacity:0.5;
 }
 
 .wishlist-title {
@@ -465,4 +474,8 @@ input[type="radio"]:checked + label {
 .user-edit-wrapper{
   display: flex;
 
+}
+
+.field{
+  margin-bottom: 30px;
 }

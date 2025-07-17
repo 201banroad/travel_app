@@ -5,7 +5,7 @@ class User < ApplicationRecord
     uniqueness: true        # 他のユーザーと同じ名前はダメ
 
 
-  validates :profile, length: {maximum: 300}
+  validates :profile, length: {maximum: 100}
   validates :wishlist_text, length: {maximum: 200}
 
   # 改行のバリテーション
@@ -28,6 +28,9 @@ class User < ApplicationRecord
 
   # ユーザーを削除したときに、その人の投稿も全部一緒に削除される
   has_many :spots, dependent: :destroy
+  # これは付箋
+  has_many :post_its, dependent: :destroy
+
 
   # いいねの設定
   has_many :likes, dependent: :destroy
