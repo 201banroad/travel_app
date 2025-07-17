@@ -8,6 +8,15 @@ class User < ApplicationRecord
   validates :profile, length: {maximum: 300}
   validates :wishlist_text, length: {maximum: 200}
 
+  # 改行のバリテーション
+  validate :profile_line_limit
+
+  def profile_line_limit
+    if profile.present? && profile.lines.count > 4
+      errors.add(:profile, "は4行以内にしてください")
+    end
+  end
+
     
 # 同じmailでは登録できないように
   # Include default devise modules. Others available are:
