@@ -1,0 +1,20 @@
+<h2>付箋を貼る</h2>
+
+
+<% if @post_it.errors.any? %>
+  <div class="error-messages">
+    <ul>
+      <% @post_it.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with model: @post_it, local: true, data: { turbo: false } do |f| %>
+  <div class="field">
+    <%= f.text_area :content, rows: 10, placeholder: "書く..." %>
+  </div>
+
+  <%= f.submit "貼る", class: "btn" %>
+<% end %>

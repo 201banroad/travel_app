@@ -6,7 +6,8 @@ class User < ApplicationRecord
 
 
   validates :profile, length: {maximum: 100}
-  validates :wishlist_text, length: {maximum: 200}
+
+
 
   # 改行のバリテーション
   validate :profile_line_limit

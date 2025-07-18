@@ -328,62 +328,79 @@
   color: #2e6a4f;
 }
 
+/* マイページの付箋 */
 
-.wishlist-box {
-  margin: 4rem;
-  margin-left: 20rem;
-  max-width: 600px;
-  max-height: 250px;
-  overflow-y: auto;
-  font-family: 'Zen Old Mincho', serif;
+.sticky-link a {
   font-size: 15px;
-  line-height: 1.8;
-  color: #3a2e25;
-  background-color: #f8f5f0;
-  padding: 1px 25px;
-  border-radius: 2px;
-  border: 1px solid #d6cdbb;
-  box-shadow: 2px 4px 10px rgba(150, 140, 120, 10);
-  background-image: linear-gradient(to bottom right, #fdfaf5, #f2efe9);
-  opacity:0.5;
-}
-
-.wishlist-title {
-  padding-top: 1rem;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  font-family: 'Georgia', serif;
-  text-shadow: 1px 1px 1px #ccc;
-}
-
-.wishlist-edit{
-  display: inline-block;
-  font-weight: bold;
-  padding: 3px 8px;
-  margin-bottom: 20px;
-  color: #3b372d;
-  font-family: 'Zen Old Mincho', serif;
-  background-color: rgba(232, 227, 232, 0.957);
-  border-radius: 5px;
-  box-shadow: 1px 2px 13px rgba(180, 181, 190, 0.741);
-
-}
-
-.wishlist-edit:hover {
-  transition: all 0.4s ease;
-  box-shadow: 3px 2px 15px rgba(0, 0, 0, 0.314);
-
-}
-
-.wishlist-edit a {
   text-decoration: none;
-  color: inherit; /* リンクの青色を消して、親と同じ色にする */
+  /* display: block; */
+  margin-top: 1rem;
+  margin-left: 30rem;
+  background-color: #dbd5d3; 
+  color: #0a0a0a97;
+  padding: 5px 10px;
+  border-radius: 2px;
+  border: none;    
+  font-weight: solid;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.265);
+  transition: all 0.3s ease;
+  opacity: 0.7;
 }
 
+.sticky-link a:hover{
+  background-color: #aab9bb;
+  transform: translateY(-2px);
+  /* box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.2); */
+}
+
+.sticky-container {
+  position: relative;
+  width: 100%;
+  height: 300px; /* 必要に応じて調整 */
+}
+
+.delete-btn{
+  background-color: #cde4e6;
+
+}
+
+.sticky-note {
+  word-break: break-word;
+  font-size: 15px;
+  background-color: #cde4e6;
+  padding: 1rem;
+  width: 170px;
+  height: 150px;
+  border: 1px solid #acabab91;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.202);
+  position: absolute;
+  opacity: 0.9;
+  transition: all 0.2s ease;
+}
+
+.delete-btn {
+  text-decoration: none;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: #b33;
+  font-weight: bold;
+}
+
+.sticky-note:nth-child(1) { top: 5px; left: 0; }
+.sticky-note:nth-child(2) { top: 10px; left: 200px; }
+.sticky-note:nth-child(3) { top: 7px; left: 390px; }
+.sticky-note:nth-child(4) { top: 140px; left: 90px; }
+.sticky-note:nth-child(5) { top: 130px; left: 310px; }
+
+/* クリックで前面に出る（フォーカス時） */
+.sticky-note:focus-within,
+.sticky-note:hover {
+  z-index: 10;
+}
 
 
 .tab-content {
-
   display: none; /* タブを選んでいない時は投稿非表示 */
   flex-wrap: wrap;
   justify-content: center; /* 横方向中央 */
@@ -398,8 +415,6 @@
   overflow: hidden;
   /* border: 1px solid #e8dfdfd7; */
   opacity: 0.7;
-  
-
 }
 
 .mypage-spots img{
