@@ -10,7 +10,7 @@ class PostItsController < ApplicationController
       # すでに5枚以上投稿していないか確認
     if current_user.post_its.count >= 5
       redirect_to mypage_path, alert: "付箋は5枚までです。先に削除してください。"
-      return
+      return #処理ここで抜けるコード
     end
     @post_it = current_user.post_its.build(post_it_params)
     if @post_it.save

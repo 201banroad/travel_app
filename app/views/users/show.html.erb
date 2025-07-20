@@ -45,7 +45,7 @@
       <div class="sticky-note" style="--i:<%= i %>">
         <%= simple_format(post_it.content) %>
         <% if user_signed_in? && current_user == @user %>
-          <%= button_to "×", post_it_path(post_it), method: :delete, data: { confirm: "削除しますか？" }, class: "delete-btn" %>
+          <%= button_to "×", post_it_path(post_it), method: :delete, class: "delete-btn" %>
         <% end %>
       </div>
     <% end %>

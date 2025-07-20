@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   validates :name,
     presence: true,
-    length: { maximum: 20 }, # 13文字以内
+    length: { maximum: 20 },
     uniqueness: true        # 他のユーザーと同じ名前はダメ
 
 

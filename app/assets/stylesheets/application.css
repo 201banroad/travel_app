@@ -10,6 +10,8 @@
  */
 
 
+/* ここからレスポンシブ */
+
 /* ここからINDEX */
 .topper {
     text-align: center;
@@ -391,7 +393,7 @@
   border: 1px solid #acabab91;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.202);
   position: absolute;
-  opacity: 0.9;
+  /* opacity: 0.9; */
   transition: all 0.2s ease;
 }
 
