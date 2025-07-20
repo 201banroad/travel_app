@@ -329,6 +329,15 @@
 }
 
 /* マイページの付箋 */
+.flash-alert{
+  font-size: 13px;
+
+  display: inline-block;
+  background-color: #aab9bb;
+  margin-top: 1rem;
+  margin-left: 30rem;
+
+}
 
 .sticky-link a {
   font-size: 15px;
@@ -359,8 +368,16 @@
   height: 300px; /* 必要に応じて調整 */
 }
 
-.delete-btn{
+.delete-btn{/* ボタンの感じを消す */
   background-color: #cde4e6;
+  background: none;        /* 背景を透明に */
+  border: none;            /* 枠線を消す */
+  padding: 0;              /* 余白をゼロに */
+  margin: 0;               /* 必要ならマージンもゼロに */
+  font: inherit;           /* ボタン特有のフォントをリセット */
+  color: #b33;             /* 赤系のテキストカラー */
+  cursor: pointer;         /* ホバーでポインターにする */
+  text-decoration: none; 
 
 }
 

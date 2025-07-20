@@ -1,3 +1,7 @@
+
+  
+
+  
   <div class="sticky-link" >
       <%= link_to "付箋を貼る", new_post_it_path %>
   </div>
@@ -12,6 +16,9 @@
   </div>
 <% end %>
 
+  <% if flash[:alert] %>
+    <div class="flash-alert"><%= flash[:alert] %></div>
+  <% end %>
 
 <div class="profile-wrapper">
   <div class="profile-box">
