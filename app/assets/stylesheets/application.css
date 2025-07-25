@@ -55,7 +55,7 @@
     background-repeat: repeat;
     font-family: 'Shippori Mincho B1', serif;
     color: #2f3e30;
-    padding: 40px;
+    padding: 60px;
     line-height: 1.8;
   }
   
@@ -243,11 +243,21 @@
 
 
   /* ここからマイページ ------------------------------------------------------------*/
+ 
+
+
 
  .profile-wrapper{
-  display: flex;
+  width: 100%;
   margin-left: 2rem;
+  display: flex;
  }
+
+ .profile-image-text{
+    display: flex;
+
+  }
+
 
 .profile-box {
   gap: 20px;
@@ -280,20 +290,19 @@
     transparent 22px,
     #dcdcdc 23px
   );
+  background-color: #ededeaa8;
+  color: #130a0489;
+  font-size: 15px;
   white-space: pre-wrap;
   word-break: break-word; /* この二つは改行の処理 */
-  width: 200px;
   max-height: 160px;
+  min-width: 150px;
   line-height: 15px;
   margin-left: 50px;
-  padding: 1rem;
+  padding: 2rem;
   font-family: 'Zen Old Mincho', serif;
-  font-size: 15px;
-  color: #130a0489;
   border-radius: 1px;
   text-shadow:2px 2px 6px rgba(61, 58, 58, 0.274);
-  /* box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.151); */
-  background-color: #ededeaa8;
   opacity: 0.8;
 }
 
@@ -333,7 +342,7 @@
   color: #2e6a4f;
 }
 
-/* マイページの付箋 */
+/* マイページの付箋ーーーーーーーーーーーーーーー */
 .flash-alert{
   font-size: 13px;
 
@@ -345,11 +354,12 @@
 }
 
 .sticky-link a {
+  display: inline-block;
   font-size: 15px;
   text-decoration: none;
-  /* display: block; */
   margin-top: 1rem;
   margin-left: 30rem;
+  margin-bottom: 20px;
   background-color: #dbd5d3; 
   color: #0a0a0a97;
   padding: 5px 10px;
@@ -373,15 +383,47 @@
 .sticky-container {
   /* position: relative; */
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); */
-  /* grid-template-columns: repeat(3, minmax(0, 1fr));  */
-  /* grid-template-columns: repeat(3, minmax(140px, 1fr)); */
-  grid-template-columns: repeat(3, 180px); /* 3列、幅固定！ */
+  grid-template-columns: repeat(3, 160px); /* 3列、幅固定！ */
   width: 100%;
-  height: 300px; /* 必要に応じて調整 */
-  margin-top: 10px;
+  /* height: 300px; 必要に応じて調整 */
+  /* margin-top: 15px; */
   
 }
+
+
+.sticky-note {
+  /* position: relative; 削除ボタンのために残す */
+  /* margin-top: 25px; */
+  margin-left: 20px;
+  word-break: break-word;
+  font-size: 12px;
+  background-color: #cde4e6;
+  padding: 1rem;
+  width: 100%;
+  max-width: 170px;
+  height: 150px;
+  border: 1px solid #acabab91;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.202);
+  opacity: 0.9;
+
+}
+
+/* 無造作に傾き + ゆらぎ */
+.sticky-note:nth-child(odd) {
+  transform: rotate(-1deg) scale(0.98);
+}
+.sticky-note:nth-child(even) {
+  transform: rotate(-1deg) scale(1.01);
+}
+
+/* ホバー時に前へ動く */
+.sticky-note:hover {
+  transform: rotate(0deg) scale(1);
+  transition: transform 0.7s ease;
+  z-index: 10;
+} 
+
+
 
 .delete-btn{/* ボタンの感じを消す */
   position: absolute;
@@ -396,46 +438,6 @@
   text-decoration: none; 
 
 }
-
-.sticky-note {
-  /* position: absolute; */
-  position: relative; /* 削除ボタンのために残す */
-  /* margin-left: 400px; */
-  word-break: break-word;
-  font-size: 15px;
-  background-color: #cde4e6;
-  padding: 1rem;
-  width: 100%;
-  max-width: 170px;
-  height: 160px;
-  border: 1px solid #acabab91;
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.202);
-  /* opacity: 0.9; */
-  transition: all 0.2s ease;
-
-}
-
-
-.sticky-note:nth-child(odd) {
-  transform: rotate(-1deg);
-}
-.sticky-note:nth-child(even) {
-  transform: rotate(1deg);
-} 
- /* この二つは無造作感
-
-/* .sticky-note:nth-child(1) { top: 5px; left: 0; }
-.sticky-note:nth-child(2) { top: 10px; left: 200px; }
-.sticky-note:nth-child(3) { top: 7px; left: 390px; }
-.sticky-note:nth-child(4) { top: 140px; left: 90px; }
-.sticky-note:nth-child(5) { top: 130px; left: 310px; } */
-
-/* クリックで前面に出る（フォーカス時） */
-.sticky-note:focus-within,
-.sticky-note:hover {
-  z-index: 10;
-}
-
 
 .tab-content {
   display: grid !important;
@@ -456,9 +458,6 @@
   border-radius: 8px;
   opacity: 0.7;
 
-  /* flex-basis: 100%;  各スポットカードは親要素の30%の幅を持つ */
-  /* flex-grow: 1;  親要素の幅に応じてスポットカードが縮小する */
-  /* flex-shrink: 1; 幅が足りなくなったら縮小する */
 }
 
 .mypage-spots img{
@@ -548,19 +547,22 @@ input[type="radio"]:checked + label {
   
 
   .profile-wrapper {
-    /* flex-direction: column; プロフィール部分を縦に並べる */
     gap: 10px;
+
   }
 
+  .profile-image-text{
+  display: block;/* アイコンとプロフィール文を縦並びに */
+  }
+  
+
+
   .profile-box {
-    flex-basis: 50%;
-     /* 横幅100%にして、1列に並べる */
-    margin-left: 0;
+    
   }
 
   .avatar {
-    /* width: 100px; アバターのサイズ調整 */
-    /* height: 100px; */
+    
   }
 
   .profile-name {
@@ -568,33 +570,35 @@ input[type="radio"]:checked + label {
   }
 
   .profile-text {
-    width: 100%;
-    margin-left: 0;
+    width: 80%;
+    padding: 20px;
+    /* margin-right:200px; */
+    margin-left: 0;/* 左に余白がある場合０にする */
   }
 
   .sticky-container {
+    
     height: 200px; /* 付箋エリアの高さ調整 */
   }
 
   .sticky-note {
-    width: 150px;
-    height: 130px;
-    font-size: 14px;
+    /* width: 100%; */
+    margin-left: 0;
+    width: 130px;
+    height: 120px;    
   }
-}
 
-.tab-content{
-  /* width: 280px; */
+
+  .tab-content{
   
-}
+  }
 
-.mypage-spots{
-  /* width: 280px; */
-  width: 20%;
-  /* flex-grow: 0; */
-  /* flex-shrink: 0; */
-  /* flex-basis: 280px; 横一列のアイテム数を維持 */
+  .mypage-spots{
+  width: 280px;
+  
 
+
+  }
 
 }
 

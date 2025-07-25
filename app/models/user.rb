@@ -5,7 +5,7 @@ class User < ApplicationRecord
     uniqueness: true        # 他のユーザーと同じ名前はダメ
 
 
-  validates :profile, length: {maximum: 100}
+  validates :profile, length: {maximum: 70}
 
 
 

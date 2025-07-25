@@ -21,25 +21,27 @@
   <% end %>
 
 <div class="profile-wrapper">
-  <div class="profile-box">
-    <% if @user.avatar.attached? %>
-      <%= image_tag url_for(@user.avatar), class: "avatar" %>
-    <% else %>
-      <%= image_tag "default_avatar.png", class: "avatar" %>
-    <% end %>
-    <div class= "profile-name"> <%=@user.name%>
+  <div class="profile-image-text">
+
+    <div class="profile-box">
+      <% if @user.avatar.attached? %>
+        <%= image_tag url_for(@user.avatar), class: "avatar" %>
+      <% else %>
+        <%= image_tag "default_avatar.png", class: "avatar" %>
+      <% end %>
+      <div class= "profile-name"> <%=@user.name%>
+      </div>
+    </div>
+
+    <div class="profile-box">
+      <% if @user.profile.present? %>
+        <div class="profile-text"><%= simple_format(@user.profile) %></div>
+      <% else %>
+        <div class="profile-text">まだプロフィールが設定されていません。</div>
+      <% end %>
     </div>
   </div>
-
-  <div class="profile-box">
-    <% if @user.profile.present? %>
-      <div class="profile-text"><%= simple_format(@user.profile) %></div>
-    <% else %>
-      <div class="profile-text">まだプロフィールが設定されていません。</div>
-    <% end %>
-  </div>
-
- 
+  
   <div class="sticky-container">
     <% @user.post_its.limit(5).each_with_index do |post_it, i| %>
       <div class="sticky-note" style="--i:<%= i %>">
@@ -50,9 +52,9 @@
       </div>
     <% end %>
   </div>
-
   
 </div>
+
 
 
 <div class="tab-wrapper">

@@ -1,7 +1,7 @@
 class PostIt < ApplicationRecord
   belongs_to :user
 
-  validates :content, presence: true, length: { maximum: 100 }
+  validates :content, presence: true, length: { maximum: 60 }
 
   validate :line_limit
 
