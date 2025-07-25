@@ -10,9 +10,9 @@
  */
 
 
-/* ここからレスポンシブ */
 
-/* ここからINDEX */
+
+/* ここからINDEX------------------------------------- */
 .topper {
     text-align: center;
     max-width: 800px;
@@ -102,6 +102,8 @@
   height: auto;
   object-fit: cover;
 }
+
+/* ここはアプリケーションHTMLーーーーーーーーーーーーーーーー */
 .green-button {
     background-color: #6c8c6b; /* 苔っぽい緑 */
     color: #ffffff;
@@ -120,7 +122,7 @@
     box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.2);
   }
   
-/* ここからSpot Show */
+/* ここからSpot Show------------------------------------- */
 .diary-page {
     background-color: #fffaf3;
     background-image: linear-gradient(to bottom, rgba(100, 85, 60, 0.08) 1px, transparent 1px);
@@ -240,7 +242,7 @@
 
 
 
-  /* ここからマイページ */
+  /* ここからマイページ ------------------------------------------------------------*/
 
  .profile-wrapper{
   display: flex;
@@ -296,11 +298,12 @@
 }
 
   .settings-tab {
+  height: 65px;
   position: absolute;
   top: 40px;
   right: 50px;
   background-color: #f9f1e4ed;
-  padding: 1px 10px;
+  padding: 0px 10px;
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
@@ -364,18 +367,29 @@
   /* box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.2); */
 }
 
+
+
+
 .sticky-container {
-  position: relative;
+  /* position: relative; */
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); */
+  /* grid-template-columns: repeat(3, minmax(0, 1fr));  */
+  /* grid-template-columns: repeat(3, minmax(140px, 1fr)); */
+  grid-template-columns: repeat(3, 180px); /* 3列、幅固定！ */
   width: 100%;
   height: 300px; /* 必要に応じて調整 */
+  margin-top: 10px;
+  
 }
 
 .delete-btn{/* ボタンの感じを消す */
+  position: absolute;
+  top: 5px;
+  right: 5px;
   background-color: #cde4e6;
   background: none;        /* 背景を透明に */
   border: none;            /* 枠線を消す */
-  padding: 0;              /* 余白をゼロに */
-  margin: 0;               /* 必要ならマージンもゼロに */
   font: inherit;           /* ボタン特有のフォントをリセット */
   color: #b33;             /* 赤系のテキストカラー */
   cursor: pointer;         /* ホバーでポインターにする */
@@ -384,33 +398,37 @@
 }
 
 .sticky-note {
+  /* position: absolute; */
+  position: relative; /* 削除ボタンのために残す */
+  /* margin-left: 400px; */
   word-break: break-word;
   font-size: 15px;
   background-color: #cde4e6;
   padding: 1rem;
-  width: 170px;
-  height: 150px;
+  width: 100%;
+  max-width: 170px;
+  height: 160px;
   border: 1px solid #acabab91;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.202);
-  position: absolute;
   /* opacity: 0.9; */
   transition: all 0.2s ease;
+
 }
 
-.delete-btn {
-  text-decoration: none;
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  color: #b33;
-  font-weight: bold;
-}
 
-.sticky-note:nth-child(1) { top: 5px; left: 0; }
+.sticky-note:nth-child(odd) {
+  transform: rotate(-1deg);
+}
+.sticky-note:nth-child(even) {
+  transform: rotate(1deg);
+} 
+ /* この二つは無造作感
+
+/* .sticky-note:nth-child(1) { top: 5px; left: 0; }
 .sticky-note:nth-child(2) { top: 10px; left: 200px; }
 .sticky-note:nth-child(3) { top: 7px; left: 390px; }
 .sticky-note:nth-child(4) { top: 140px; left: 90px; }
-.sticky-note:nth-child(5) { top: 130px; left: 310px; }
+.sticky-note:nth-child(5) { top: 130px; left: 310px; } */
 
 /* クリックで前面に出る（フォーカス時） */
 .sticky-note:focus-within,
@@ -420,25 +438,32 @@
 
 
 .tab-content {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr); /* 3列固定 */
+
+  /* Tab1contentでやってるのでdisplay:flex;は不要 */
   display: none; /* タブを選んでいない時は投稿非表示 */
-  flex-wrap: wrap;
-  justify-content: center; /* 横方向中央 */
+  width: 100%;
 }
 
 
 .mypage-spots{
-  display: inline-block;
-  margin-right: 25px;
-  padding: 100px 110px;
+
+  box-sizing: border-box; /* パディングやボーダーを幅に含める */
+
+  padding: 100px 70px;
+  margin-left: 30px;
   border-radius: 8px;
-  overflow: hidden;
-  /* border: 1px solid #e8dfdfd7; */
   opacity: 0.7;
+
+  /* flex-basis: 100%;  各スポットカードは親要素の30%の幅を持つ */
+  /* flex-grow: 1;  親要素の幅に応じてスポットカードが縮小する */
+  /* flex-shrink: 1; 幅が足りなくなったら縮小する */
 }
 
 .mypage-spots img{
   box-shadow: 4px 4px 14px black;
-  display: inline-block; /* transformを効かせるために必要な場合あり */
+  /* display: inline-block; transformを効かせるために必要な場合あり */
   transition: all 0.5s ease; /* ← ふんわり動かす */
 
 }
@@ -459,9 +484,8 @@
 
 .spot-title {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);  
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: nowrap;/* 改行されないように */
+  text-overflow: ellipsis; /* テキストが親要素の幅を超えた場合に、「…」と表示 */
   max-width: 170px; 
 }
 
@@ -471,7 +495,7 @@
 #tab1:checked ~ #content1,
 #tab2:checked ~ #content2 {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: center;
   margin-top: 1rem;
 }
@@ -512,4 +536,103 @@ input[type="radio"]:checked + label {
 
 .field{
   margin-bottom: 30px;
+}
+
+
+
+
+/* ここからレスポンシブ------------------------------------- */
+
+/* タブレット用 (1024px以下) */
+@media screen and (max-width: 1024px) {
+  
+
+  .profile-wrapper {
+    /* flex-direction: column; プロフィール部分を縦に並べる */
+    gap: 10px;
+  }
+
+  .profile-box {
+    flex-basis: 50%;
+     /* 横幅100%にして、1列に並べる */
+    margin-left: 0;
+  }
+
+  .avatar {
+    /* width: 100px; アバターのサイズ調整 */
+    /* height: 100px; */
+  }
+
+  .profile-name {
+    font-size: 16px; /* プロフィール名のフォントサイズ調整 */
+  }
+
+  .profile-text {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .sticky-container {
+    height: 200px; /* 付箋エリアの高さ調整 */
+  }
+
+  .sticky-note {
+    width: 150px;
+    height: 130px;
+    font-size: 14px;
+  }
+}
+
+.tab-content{
+  /* width: 280px; */
+  
+}
+
+.mypage-spots{
+  /* width: 280px; */
+  width: 20%;
+  /* flex-grow: 0; */
+  /* flex-shrink: 0; */
+  /* flex-basis: 280px; 横一列のアイテム数を維持 */
+
+
+}
+
+/* スマホ向け (768px以下) */
+@media screen and (max-width: 768px) {
+  
+
+  .profile-wrapper {
+    flex-direction: column; /* プロフィール部分を縦に並べる */
+    gap: 10px;
+  }
+
+  .profile-box {
+    flex-basis: 100%; /* 横幅100%にして、1列に並べる */
+    margin-left: 0;
+  }
+
+  .avatar {
+    width: 80px; /* アバターのサイズ調整 */
+    height: 80px;
+  }
+
+  .profile-name {
+    font-size: 14px; /* プロフィール名のフォントサイズ調整 */
+  }
+
+  .profile-text {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .sticky-container {
+    height: 150px; /* 付箋エリアの高さ調整 */
+  }
+
+  .sticky-note {
+    width: 120px;
+    height: 100px;
+    font-size: 12px;
+  }
 }
