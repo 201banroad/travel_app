@@ -260,7 +260,7 @@
 
 
 .profile-box {
-  gap: 20px;
+  /* gap: 20px; */
   align-items: center;
   margin-top: 50px;
   
@@ -615,7 +615,7 @@ input[type="radio"]:checked + label {
   }
 
   .profile-box {
-    flex-basis: 100%; /* 横幅100%にして、1列に並べる */
+    /* flex-basis: 100%; 横幅100%にして、1列に並べる */
     margin-left: 0;
   }
 
@@ -648,6 +648,7 @@ input[type="radio"]:checked + label {
 
 @media screen and (max-width: 375px) {
 
+  /* 外側の不要な余白を削除 */
 body{
   padding: 0;
   margin: 0;
@@ -658,12 +659,10 @@ body{
   padding: 25px 0 0 35px;
 }
 
-
-
 .green-button{
   /* display:flex; */
   background-color:transparent;
-  color: rgba(49, 48, 48, 0.964);
+  color: rgba(49, 48, 48, 0.835);
   box-shadow: none;
   font-size:12px;
   font-weight: 300;
@@ -676,6 +675,107 @@ body{
   box-shadow: none;
 }
 
+.settings-tab {
+  background-color:transparent;
+  box-shadow: none;
+  border: none;
+}
+
+
+.settings-tab li a{
+  color: rgb(15, 15, 15);
+  font-size:12px;
+  font-weight: 300;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.avatar{
+  width: 130px;
+  height: 130px;
+}
+
+.profile-name{
+  padding-top: 10px;
+  border-bottom: 1px solid	 #516d31;
+}
+
+.profile-box{
+  max-width: 280px;
+  margin-top: 20px;
+}
+
+
+.sticky-note {
+  position: absolute; /* ← 重ねるにはこれが必要 */
+  top: 600;
+  left: 20px;
+  transform: rotate(-1deg); /* 少し傾けて「無造作感」を演出 */
+  z-index: 1;
+  opacity: 0.9;
+}
+
+/* 少しずつズラして見せたい場合 */
+.sticky-note:nth-child(2) {
+  top: 495px;
+  left: 60px;
+  /* transform: rotate(1deg); */
+  z-index: 2;
+}
+
+.sticky-note:nth-child(3) {
+  top: 480px;
+  left: 90px;
+  transform: rotate(-1deg);
+  z-index: 3;
+}
+
+.sticky-note:nth-child(4) {
+  top: 500px;
+  left: 120px;
+  transform: rotate(-1deg);
+  z-index: 4;
+}
+
+.sticky-note:nth-child(5) {
+  top: 490px;
+  left: 150px;
+  transform: rotate(-1deg);
+  z-index: 5;
+}
+/* ホバー時に前へ動く */
+.sticky-note:hover {
+  transform: rotate(0deg) scale(1);
+  transition: transform 0.1s ease;
+  z-index: 10;
+  opacity: 1;
+} 
+
+.sticky-link a{
+  /* display:block; */
+  margin: 0;
+  position:relative;
+  top: 600px;
+  left: 20px;
+  font-size:13px;
+  box-shadow:none;
+  padding: 3px 9px;
+  border-bottom: 1px solid	 #516d31;
+
+}
+
+.tab-wrapper{
+margin-top:100px;
+}
+
+.tab-wrapper label[for="tab1"] {
+margin-left:20px;
+}
+
+.tab-content {
+    display: flex !important;
+    flex-direction: column;
+    gap: 60px; /* カード間の余白 */
+  }
 
 
 
