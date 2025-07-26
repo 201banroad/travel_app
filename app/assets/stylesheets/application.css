@@ -109,7 +109,7 @@
     color: #ffffff;
     padding: 10px 20px;
     border-radius: 15px;
-    border: none;
+    /* border: none; */
     text-decoration: none;
     font-weight: bold;
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
@@ -605,6 +605,9 @@ input[type="radio"]:checked + label {
 /* スマホ向け (768px以下) */
 @media screen and (max-width: 768px) {
   
+  .settings-tab{
+    margin-top: 4rem;
+  }
 
   .profile-wrapper {
     flex-direction: column; /* プロフィール部分を縦に並べる */
@@ -617,8 +620,8 @@ input[type="radio"]:checked + label {
   }
 
   .avatar {
-    width: 80px; /* アバターのサイズ調整 */
-    height: 80px;
+    /* width: 80px; アバターのサイズ調整 */
+    /* height: 80px; */
   }
 
   .profile-name {
@@ -639,4 +642,42 @@ input[type="radio"]:checked + label {
     height: 100px;
     font-size: 12px;
   }
+}
+
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーここから最小スマホ */
+
+@media screen and (max-width: 375px) {
+
+body{
+  padding: 0;
+  margin: 0;
+}
+
+.header{
+  height: auto;
+  padding: 25px 0 0 35px;
+}
+
+
+
+.green-button{
+  /* display:flex; */
+  background-color:transparent;
+  color: rgba(49, 48, 48, 0.964);
+  box-shadow: none;
+  font-size:12px;
+  font-weight: 300;
+  font-family: 'Noto Sans JP', sans-serif;
+  padding: 0 19px 0 0;
+}
+
+.green-button:hover {
+  background-color:transparent;
+  box-shadow: none;
+}
+
+
+
+
+
 }
