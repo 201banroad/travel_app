@@ -652,11 +652,13 @@ input[type="radio"]:checked + label {
 body{
   padding: 0;
   margin: 0;
+  margin-left:2.5rem;
+
 }
 
 .header{
   height: auto;
-  padding: 25px 0 0 35px;
+  padding: 25px 0 0 15px;
 }
 
 .green-button{
@@ -689,6 +691,13 @@ body{
   font-family: 'Noto Sans JP', sans-serif;
 }
 
+.profile-wrapper{
+  margin: 0;
+  /* box-sizing: border-box; */
+  /* width:100% */
+
+}
+
 .avatar{
   width: 130px;
   height: 130px;
@@ -699,16 +708,24 @@ body{
   border-bottom: 1px solid	 #516d31;
 }
 
+.profile-text{
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 30px 5px 30px;
+}
+
 .profile-box{
   max-width: 280px;
   margin-top: 20px;
 }
-
+.sticky-container {
+  position: relative; /* ← これが大事！ */
+}
 
 .sticky-note {
   position: absolute; /* ← 重ねるにはこれが必要 */
-  top: 600;
-  left: 20px;
+  top: 28px;
+  left: 5px;
   transform: rotate(-1deg); /* 少し傾けて「無造作感」を演出 */
   z-index: 1;
   opacity: 0.9;
@@ -716,29 +733,29 @@ body{
 
 /* 少しずつズラして見せたい場合 */
 .sticky-note:nth-child(2) {
-  top: 495px;
-  left: 60px;
+  top: 25px;
+  left: 35px;
   /* transform: rotate(1deg); */
   z-index: 2;
 }
 
 .sticky-note:nth-child(3) {
-  top: 480px;
-  left: 90px;
+  top: 27px;
+  left: 65px;
   transform: rotate(-1deg);
   z-index: 3;
 }
 
 .sticky-note:nth-child(4) {
-  top: 500px;
-  left: 120px;
+  top: 29px;
+  left: 95px;
   transform: rotate(-1deg);
   z-index: 4;
 }
 
 .sticky-note:nth-child(5) {
-  top: 490px;
-  left: 150px;
+  top: 26px;
+  left: 125px;
   transform: rotate(-1deg);
   z-index: 5;
 }
@@ -755,7 +772,6 @@ body{
   margin: 0;
   position:relative;
   top: 600px;
-  left: 20px;
   font-size:13px;
   box-shadow:none;
   padding: 3px 9px;
@@ -767,17 +783,28 @@ body{
 margin-top:100px;
 }
 
-.tab-wrapper label[for="tab1"] {
-margin-left:20px;
-}
+/* .tab-wrapper label[for="tab1"] { */
+/* margin-left:20px; */
+/* } */
 
 .tab-content {
     display: flex !important;
     flex-direction: column;
     gap: 60px; /* カード間の余白 */
+    /* padding-right:100px; */
   }
 
+  .mypage-spots {
+    margin:0;
+  }
 
+.flash-alert{
+  margin: 0;
+  position:relative;
+  top: 600px;
+  left: 20px;
+  font-size: 12px;
+}
 
 
 }

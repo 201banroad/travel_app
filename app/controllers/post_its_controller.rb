@@ -3,21 +3,21 @@ class PostItsController < ApplicationController
 
 
   def new
-    @post_it = PostIt.new
+    if current_user.post_its.count >= 5
+      redirect_to mypage_path, alert: "付箋は5枚までです。先に削除してください。"
+      # return #処理ここで抜けるコード
+    else
+      @post_it = PostIt.new
+    end
   end
 
   def create
-      # すでに5枚以上投稿していないか確認
-    if current_user.post_its.count >= 5
-      redirect_to mypage_path, alert: "付箋は5枚までです。先に削除してください。"
-      return #処理ここで抜けるコード
-    end
     @post_it = current_user.post_its.build(post_it_params)
-    if @post_it.save
-      redirect_to mypage_path
-    else
-      render :new
-    end
+      if @post_it.save
+        redirect_to mypage_path
+      else
+        render :new
+      end
   end
 
   def destroy
