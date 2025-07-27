@@ -546,6 +546,8 @@ input[type="radio"]:checked + label {
 @media screen and (max-width: 1024px) {
   
 
+
+  
   .profile-wrapper {
     gap: 10px;
 
@@ -602,12 +604,43 @@ input[type="radio"]:checked + label {
 
 }
 
-/* スマホ向け (768px以下) */
-@media screen and (max-width: 768px) {
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーータブレット・スマホ向け (768px以下) */
+@media screen and (max-width: 794px) {
   
-  .settings-tab{
-    margin-top: 4rem;
-  }
+.header{
+  height: auto;
+  padding: 25px 0 0 15px;
+}
+
+.green-button{
+  /* display:flex; */
+  background-color:transparent;
+  color: rgba(49, 48, 48, 0.835);
+  box-shadow: none;
+  font-size:12px;
+  font-weight: 300;
+  font-family: 'Noto Sans JP', sans-serif;
+  padding: 0 19px 0 0;
+}
+
+.green-button:hover {
+  background-color:transparent;
+  box-shadow: none;
+}
+
+.settings-tab{
+  margin-top: 130px;
+  background-color:transparent;
+  box-shadow: none;
+  border: none;
+}
+
+.settings-tab li a{
+  color: rgb(15, 15, 15);
+  font-size:13px;
+  font-weight: 300;
+  font-family: 'Noto Sans JP', sans-serif;
+}
 
   .profile-wrapper {
     flex-direction: column; /* プロフィール部分を縦に並べる */
@@ -619,40 +652,125 @@ input[type="radio"]:checked + label {
     margin-left: 0;
   }
 
-  .avatar {
-    /* width: 80px; アバターのサイズ調整 */
-    /* height: 80px; */
-  }
+  
 
   .profile-name {
-    font-size: 14px; /* プロフィール名のフォントサイズ調整 */
+    font-size: 16px; 
+    padding-top: 10px;
+    border-bottom: 1px solid	 #516d31;
   }
 
-  .profile-text {
-    width: 100%;
-    margin-left: 0;
-  }
+.profile-text{
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 30px 5px 30px;
+}
 
   .sticky-container {
     height: 150px; /* 付箋エリアの高さ調整 */
+    position: relative; /* ← これが大事！ */
   }
 
   .sticky-note {
-    width: 120px;
-    height: 100px;
+    width: 150px;
+    height: 130px;
     font-size: 12px;
-  }
+    /* .sticky-note { */
+  position: absolute; /* ← 重ねるにはこれが必要 */
+  top: 28px;
+  left: 5px;
+  transform: rotate(-1deg); /* 少し傾けて「無造作感」を演出 */
+  z-index: 1;
+  opacity: 0.9;
 }
 
-/* ーーーーーーーーーーーーーーーーーーーーーーーーーーここから最小スマホ */
+/* 少しずつズラして見せたい場合 */
+.sticky-note:nth-child(2) {
+  top: 25px;
+  left: 35px;
+  /* transform: rotate(1deg); */
+  z-index: 2;
+}
 
-@media screen and (max-width: 375px) {
+.sticky-note:nth-child(3) {
+  top: 27px;
+  left: 65px;
+  transform: rotate(-1deg);
+  z-index: 3;
+}
+
+.sticky-note:nth-child(4) {
+  top: 29px;
+  left: 95px;
+  transform: rotate(-1deg);
+  z-index: 4;
+}
+
+.sticky-note:nth-child(5) {
+  top: 26px;
+  left: 125px;
+  transform: rotate(-1deg);
+  z-index: 5;
+}
+/* ホバー時に前へ動く */
+.sticky-note:hover {
+  transform: rotate(0deg) scale(1);
+  transition: transform 0.1s ease;
+  z-index: 10;
+  opacity: 1;
+} 
+
+.sticky-link a{
+  /* display:block; */
+  margin: 0;
+  position:relative;
+  top: 700px;
+  font-size:15px;
+  box-shadow:none;
+  padding: 3px 9px;
+  border-bottom: 1px solid	 #516d31;
+  
+
+}
+
+
+.flash-alert{
+  margin: 0;
+  position:relative;
+  top: 450px;
+  left: 10px;
+  font-size: 12px;
+}
+
+
+
+
+.tab-wrapper{
+margin-top:270px;
+}
+
+
+.tab-content {
+    display: flex !important;
+    flex-direction: column;
+    gap: 60px; /* カード間の余白 */
+  }
+
+
+
+}
+
+/* ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーここから最小スマホ */
+
+@media screen and (max-width: 420px) {
 
   /* 外側の不要な余白を削除 */
 body{
   padding: 0;
   margin: 0;
   margin-left:2.5rem;
+    /* margin-right:2.5rem; */
+
 
 }
 
@@ -704,6 +822,7 @@ body{
 }
 
 .profile-name{
+  font-size: 14px; 
   padding-top: 10px;
   border-bottom: 1px solid	 #516d31;
 }
@@ -723,6 +842,10 @@ body{
 }
 
 .sticky-note {
+
+      width: 120px;
+    height: 100px;
+    font-size: 12px;
   position: absolute; /* ← 重ねるにはこれが必要 */
   top: 28px;
   left: 5px;
@@ -765,6 +888,7 @@ body{
   transition: transform 0.1s ease;
   z-index: 10;
   opacity: 1;
+
 } 
 
 .sticky-link a{
@@ -776,8 +900,20 @@ body{
   box-shadow:none;
   padding: 3px 9px;
   border-bottom: 1px solid	 #516d31;
-
 }
+
+.sticky-link a:hover {
+  transform:none;
+}
+
+.flash-alert{
+  margin: 0;
+  position:relative;
+  top: 600px;
+  left: 20px;
+  font-size: 12px;
+}
+
 
 .tab-wrapper{
 margin-top:100px;
@@ -791,20 +927,11 @@ margin-top:100px;
     display: flex !important;
     flex-direction: column;
     gap: 60px; /* カード間の余白 */
-    /* padding-right:100px; */
   }
 
   .mypage-spots {
     margin:0;
   }
-
-.flash-alert{
-  margin: 0;
-  position:relative;
-  top: 600px;
-  left: 20px;
-  font-size: 12px;
-}
 
 
 }
