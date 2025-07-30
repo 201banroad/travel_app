@@ -1,0 +1,132 @@
+
+
+
+
+/* ここからINDEX------------------------------------- */
+
+body {
+    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png'); /* 葉模様っぽいテクスチャ */
+    background-color: #f3f1e7;
+    background-repeat: repeat;
+    padding: 60px;
+
+    line-height: 1.8;
+    font-family: 'Shippori Mincho B1', serif;
+    color: #2f3e30;
+}
+
+.topper h1 {
+    border-bottom: 1px solid rgb(203, 205, 189);
+    font-weight: 100;
+    text-align: center;
+    /* max-width: 800px; */
+    margin: 60px auto 80px;
+    font-family: 'Sawarabi Mincho', serif;
+    color: #3e2f1caf;
+    text-shadow: 6px 4px 13px #100f0f24;
+    /* display: inline-block; */
+    opacity: 0.9;
+
+}
+  
+.message {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+  
+.message p {
+    border-bottom: 1px solid rgb(203, 205, 189);
+    opacity: 0.6;
+    font-size: 1em;
+    line-height: 3.9;
+    background-color: #f2f3e9d0;
+    padding: 20px;
+    border-radius: 2px;
+    box-shadow: 2px 20px 10px rgba(0,0,0,0.05);
+    font-family: 'Noto Serif JP', serif;
+    color: #4a3d2a;
+    /* border-left: 5px solid #c0b58b; */
+}
+
+.spot-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 200px;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.spot-card-link {
+    text-decoration: none;
+    color: inherit; /* リンク色を親に合わせる */
+}
+
+.spot-card {
+    /* background-color: #ffffffd0; */
+    /* border: 1px solid #c9c1c1; */
+    /* border-radius: 130px; */
+    padding: 70px;
+    width: 300px;
+    /* box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.08); */
+    transition: all 0.2s ease; /* ← ふんわり動かす */
+    opacity: 0.85;
+}
+  
+.spot-card:hover {
+    transform: translateY(1px);
+    box-shadow: 90px 29px 100px rgba(0, 0, 0, 0.15);
+}
+  
+.spot-card img {
+  border-radius: 2px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* スポットカードのタイトル */
+  h3{
+    font-family: 'Cormorant Garamond', 'Shippori Mincho B1', serif;
+    color: #414543;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 0 #d6cfc2;
+    border-bottom: 2px solid #c7beb0;
+    padding-bottom: 4px;
+  }
+  
+
+@media screen and (max-width: 420px) {
+
+.topper h1 {
+    font-size: 22px;
+    margin: 70px auto 80px;
+}
+
+.message p {
+    font-size: 14px;
+    line-height: 1.9;
+    padding: 30px;
+    border-radius: 2px;
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import "pages/top";

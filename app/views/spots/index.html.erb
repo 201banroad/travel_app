@@ -1,36 +1,30 @@
 <div class= "container">
-
-    
-
     <div class= "topper">   
         <h1>小さな小さな　旅を教えて</h1>
     </div> 
 
     <div class = "message">
         <p>
-            あなたの過ごした空気を、あなたのエピソードを、なぜそこに行った?なぜそれがいいと思った?<br>
-            理由なんてなくても、あってもいい。<br>
-            あなたの感性と小さな旅を、写真と共に教えてください。<br>
-            もちろんスケールの大きな旅も…！
+            旅の理由は無くても、あってもいい。<br>
+            あなたの過ごした空気を、日々のエピソードを...<br>
+
+            
         </p>
     </div>
 
     <div class="spot-list">
-        <% @spots.each do |spot| %>
-            <div class="spot-card">
-                <% if spot.images.attached? %>
-                    <%= link_to spot_path(spot) do %>
-                        <%= image_tag spot.images.first %>
-                    <% end %>
-                <% end %>
-                
+  <% @spots.each do |spot| %>
+    <%= link_to spot_path(spot), class: "spot-card-link" do %>
+      <div class="spot-card">
+        <% if spot.images.attached? %>
+          <%= image_tag spot.images.first %>
+        <% end %>
 
-                <h3><%= spot.title %></h3>
-                <p><%= spot.user&.name || "ゲスト" %></p>
-                
-            </div>
-        <% end %>       
-    </div>
-
+        <h3><%= spot.title %></h3>
+        <p><%= spot.user&.name || "ゲスト" %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
     
 </div>
