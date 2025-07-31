@@ -1,7 +1,11 @@
  
  
- 
- 
+   /* 外側の不要な余白を削除 */
+/* body{
+  padding: 0;
+  margin: 0;
+} */
+
  h1 {
     border-bottom: 1px solid rgb(203, 205, 189);
     text-align: center;
@@ -19,13 +23,16 @@
 
 
 .diary-page {
+    max-width:800px;
+    box-sizing: border-box;
+    /* width: 100%; */
     background-color: #fffaf3;
     background-image: linear-gradient(to bottom, rgba(100, 85, 60, 0.08) 1px, transparent 1px);
-    background-size: 100% 30px;
+    background-size: 100% 30px;/* 背景と線の幅 */
     border: 1px solid #23221f00;
     padding: 40px;
     margin: 40px auto;
-    max-width: 600px;
+    /* max-width: 600px; */
     font-family: 'Sawarabi Mincho', serif;
     font-weight: 100;
     box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
@@ -51,6 +58,10 @@
     /* border: 1px solid #e1d4c0; */
     border-radius: 4px;
     box-shadow: 1px 3px 6px rgba(0,0,0,0.1);
+    max-width: 100%;   /* 親要素の幅を超えない */
+    height: auto;      /* 縦横比を保って縮む */
+
+
   }
 
   .diary-text {
@@ -140,18 +151,47 @@
 }
 
 
-@media screen and (max-width: 420px) {
-    
+@media screen and (max-width: 600px) {
+body{
+  padding: 0;
+  /* margin: 10px; */
+}
+.topper-link{
+    font-size: 20px;
+}
+
+.diary-page {
+    padding: 20px;
+}
+
+.diary-title{
+    font-size: 24px;
+
+}
+
+.diary-text {
+    padding: 30px;
+    font-size: 12px;
+    line-height: 2.1;    
+}
+
+.info-label{
+    font-size: 10px;
+}
+
+.info-item{
+    font-size: 13px;
+    margin-bottom: 30px;
+}
+
+.info-delete{
+    font-size: 14px;
+    margin:0 0 50px 30px;
 }
 
 
 
 
 
-
-
-
-
-
-
+}
 @import "pages/spot.show";
