@@ -14,7 +14,7 @@
 
 .spots-show-container {
   margin: 70px auto 0;
-  padding: 60px 20px;
+  padding: 60px 50px;
   background: #fefdfb;
   min-height: 100vh;
   max-width: 1100px;
@@ -46,18 +46,16 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding: 40px;
 }
 
 .gallery-image {
   width: 100%;
   height: auto;
-  max-height: 550px;
+  max-height: 750px;
   object-fit: contain;
   border: none;
   opacity: 0;
-  background: #ffffff;
-  padding: 50px 30px;
+  /* padding: 50px 30px; */
   animation: fadeInEthereal 0.8s ease-out 0.3s forwards;
 }
 
@@ -65,7 +63,7 @@
 .left-info-section {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
   padding-top: 20px;
   animation: fadeInEthereal 0.8s ease-out 0.4s forwards;
   opacity: 0;
@@ -74,13 +72,12 @@
 .like-action {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
 }
 
 .like-btn {
-  font-size: 22px;
+  font-size: 20px;
   color: #d4a5a5;
-  cursor: pointer;
   transition: color 0.3s ease;
   text-decoration: none;
   border: none;
@@ -102,24 +99,21 @@
 .like-count {
   font-size: 14px;
   color: #aaa;
-  font-family: 'Sawarabi Mincho', serif;
-  opacity: 0.9;
 }
 
 .info-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  opacity: 0.7;
+  gap: 1px;
+  opacity: 0.8;
 
 }
 
 .info-label {
-  font-size: 10px;
+  font-size: 13px;
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   color: #5a5a5a;
   letter-spacing: 1.5px;
-  text-transform: uppercase;
 }
 
 .info-value {
@@ -128,15 +122,15 @@
   color: #5a5a5a;
   text-decoration: none;
   transition: opacity 0.3s ease;
-  border-bottom: 1px solid rgba(180, 160, 140, 0.15);
+  border-bottom: 0.8px solid rgb(230, 216, 202);
   display: inline-block;
   padding-bottom: 2px;
 }
 
 .info-value:hover {
-  border-bottom: 1px solid rgba(180, 160, 140, 0.3);
+  border-bottom: 0.8px solid rgb(192, 179, 166);
 }
-
+/* ーーーーーーーーーーーーーーーーーーここまで確認した */
 .paper-content {
   margin: 100px auto;
   display: flex;
