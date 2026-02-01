@@ -41,8 +41,8 @@
   object-fit: cover;
   border: none;
   opacity: 0.9;
-    background: #fefdfb;
-  padding: 60px 20px;
+  background: #ffffff;
+  padding: 50px 30px;
 
 }
 
@@ -57,8 +57,7 @@
 .like-action {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px 0;
+  gap: 8px;
 }
 
 .like-btn {
@@ -74,12 +73,12 @@
 }
 
 .like-btn.liked {
-  color: #e8749a;
+  color: #b04266;
   opacity: 0.9;
 }
 
 .like-btn:hover {
-  color: #e8749a;
+  color: #cf507b;
   opacity: 1;
 }
 
@@ -87,22 +86,23 @@
   font-size: 14px;
   color: #aaa;
   font-family: 'Sawarabi Mincho', serif;
-  opacity: 0.6;
+  opacity: 0.9;
 }
 
 .info-group {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  opacity: 0.7;
+
 }
 
 .info-label {
   font-size: 10px;
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
-  color: #bbb;
+  color: #5a5a5a;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  opacity: 0.6;
 }
 
 .info-value {
@@ -114,11 +114,9 @@
   border-bottom: 1px solid rgba(180, 160, 140, 0.15);
   display: inline-block;
   padding-bottom: 2px;
-  opacity: 0.8;
 }
 
 .info-value:hover {
-  opacity: 1;
   border-bottom: 1px solid rgba(180, 160, 140, 0.3);
 }
 
@@ -127,6 +125,8 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: 40px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
 }
 
 .paper-content p {
@@ -140,6 +140,8 @@
   text-decoration: underline 0.1px rgb(146, 150, 162);
   text-shadow: 1px 2px 20px rgba(132, 124, 124, 0.3);
   text-underline-offset: 8px;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
 
 }
 
