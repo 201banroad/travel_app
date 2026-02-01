@@ -3,9 +3,20 @@
 .spots-show-container {
   padding: 60px 20px;
   min-height: 100vh;
-  background: #fefdfb;
+  /* background: #fefdfb; */
   max-width: 1100px;
-  margin: 0 auto;
+  margin-top: 70px;
+}
+
+.spot-title {
+  font-size: 32px;
+  font-family: 'Sawarabi Mincho', serif;
+  color: #5a5a5a;
+  margin: 0 0 40px 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(180, 160, 140, 0.15);
+  font-weight: 300;
+  letter-spacing: 1px;
 }
 
 /* ===== Main Layout ===== */
@@ -14,8 +25,8 @@
   grid-template-columns: 1.2fr 1fr;
   gap: 6px;
   align-items: stretch;
-}
 
+}
 .paper-left-section {
   display: flex;
   flex-direction: column;
@@ -29,13 +40,12 @@
   max-height: 550px;
   object-fit: cover;
   border: none;
-  transition: opacity 0.6s ease;
   opacity: 0.9;
+    background: #fefdfb;
+  padding: 60px 20px;
+
 }
 
-.gallery-image:hover {
-  opacity: 1;
-}
 
 .left-info-section {
   display: flex;
