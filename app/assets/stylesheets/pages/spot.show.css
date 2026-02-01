@@ -1,193 +1,267 @@
- 
- 
-   /* 外側の不要な余白を削除 */
-/* body{
-  padding: 0;
-  margin: 0;
-} */
+/* ===== Spots Show - Elegant Minimal Ethereal Design ===== */
 
- h1 {
-    border-bottom: 1px solid rgb(203, 205, 189);
-    text-align: center;
-    font-family: 'Sawarabi Mincho', serif;
-    font-weight: 100;
-    text-shadow: 6px 4px 13px #100f0f24;
-    opacity: 0.9;
-    padding-bottom: 5px;
-  }
-
-
-
-.diary-page {
-    max-width:800px;
-    box-sizing: border-box;
-    /* width: 100%; */
-    background-color: #fffaf3;
-    background-image: linear-gradient(to bottom, rgba(100, 85, 60, 0.08) 1px, transparent 1px);
-    background-size: 100% 30px;/* 背景と線の幅 */
-    border: 1px solid #23221f00;
-    padding: 40px;
-    margin: 40px auto;
-    /* max-width: 600px; */
-    font-family: 'Sawarabi Mincho', serif;
-    font-weight: 100;
-    box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
-    
-
-  }
-  
-  .diary-title {
-    
-    font-size: 28px;
-    text-align: center;
-    margin-bottom: 10px;
-    color: #413e27e5;
-    opacity: 0.8;
-    /* text-shadow: 1px 1px 7px rgba(0, 0, 0, 0.211); */
-    letter-spacing: 4px
-  }
-
-  
-  .diary-photo {
-    display: block;
-    margin: 0 auto 20px;
-    /* border: 1px solid #e1d4c0; */
-    border-radius: 4px;
-    box-shadow: 1px 3px 6px rgba(0,0,0,0.1);
-    max-width: 100%;   /* 親要素の幅を超えない */
-    height: auto;      /* 縦横比を保って縮む */
-
-
-  }
-
-  .diary-text {
-    background-color: #fdfbf6;
-    background-image: linear-gradient(to bottom, rgba(50, 40, 20, 0.03) 1px, transparent 1px);
-    background-size: 100% 28px;
-    padding: 30px;
-    font-size: 17px;
-    line-height: 2.1;
-    color: #3b372d;
-    font-family: 'Zen Old Mincho', serif;
-    border: 1px solid #d8cdb9;
-    box-shadow: inset 0 0 4px rgba(0,0,0,0.03);
-    /* border-radius: 6px; */
-    opacity:0.6
-  }
-  
-.like-button {
-    
-    display: flex;
-    padding: 3px 8px;
-    color: #3b372d;
-    font-family: 'Zen Old Mincho', serif;
-    text-decoration: none;
-    opacity:0.8
-}
-.like-button i.fa-heart {
-    color: #e74c3c; /* 例：赤 */
+.spots-show-container {
+  padding: 60px 20px;
+  min-height: 100vh;
+  background: #fefdfb;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
+/* ===== Main Layout ===== */
+.paper-main-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 6px;
+  align-items: stretch;
+}
 
+.paper-left-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px;
+}
 
-  .spot-info {
-    display: flex;
-    justify-content: center;
-    gap: 24px;	
-  }
-  
-  .info-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .info-label {
-    font-size: 12px;
-    color: #aaa;
-    font-family: 'Zen Kaku Gothic Antique', sans-serif;
-    margin-bottom: 4px;
-    letter-spacing: 0.5px;
-  }
-  
-  .info-value {
-    text-decoration: none;
-    font-weight: bold;
-    padding: 3px 8px;
-    color: #3b372d;
-    font-family: 'Zen Old Mincho', serif;
-    background-color: rgb(220, 220, 220);
-    border-radius: 5px;
-    box-shadow: 1px 2px 13px rgba(174, 171, 171, 0.551);
-  }
+.gallery-image {
+  width: 100%;
+  height: auto;
+  max-height: 550px;
+  object-fit: cover;
+  border: none;
+  transition: opacity 0.6s ease;
+  opacity: 0.9;
+}
 
-  .info-value a {
+.gallery-image:hover {
+  opacity: 1;
+}
+
+.left-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 20px;
+}
+
+.like-action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.like-btn {
+  font-size: 22px;
+  color: #d4a5a5;
+  cursor: pointer;
+  transition: color 0.3s ease;
   text-decoration: none;
-  color: inherit;
+  border: none;
+  background: none;
+  padding: 0;
+  opacity: 0.7;
 }
 
+.like-btn.liked {
+  color: #e8749a;
+  opacity: 0.9;
+}
 
-  .info-value:hover {
-    background-color: #e7e7e7b0;
-    transform: translateY(-1px);
-    box-shadow: 3px 6px 7px rgba(0, 0, 0, 0.2);
-    transition: all 0.8s ease;
-  }
-  
- 
+.like-btn:hover {
+  color: #e8749a;
+  opacity: 1;
+}
+
+.like-count {
+  font-size: 14px;
+  color: #aaa;
+  font-family: 'Sawarabi Mincho', serif;
+  opacity: 0.6;
+}
+
+.info-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.info-label {
+  font-size: 10px;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  color: #bbb;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.info-value {
+  font-size: 16px;
+  font-family: 'Sawarabi Mincho', serif;
+  color: #5a5a5a;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  border-bottom: 1px solid rgba(180, 160, 140, 0.15);
+  display: inline-block;
+  padding-bottom: 2px;
+  opacity: 0.8;
+}
+
+.info-value:hover {
+  opacity: 1;
+  border-bottom: 1px solid rgba(180, 160, 140, 0.3);
+}
+
+.paper-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 40px;
+}
+
+.paper-content p {
+  font-size: 16px;
+  line-height: 2.7;
+  color: #5a5a5a;
+  font-family: 'Sawarabi Mincho', serif;
+  margin: 0;
+  opacity: 0.8;
+  font-weight: 300;
+  text-decoration: underline 0.1px rgb(146, 150, 162);
+  text-shadow: 1px 2px 20px rgba(132, 124, 124, 0.3);
+  text-underline-offset: 8px;
+
+}
+
+/* ===== Footer ===== */
+.paper-footer {
+  padding: 40px 0 0 0;
+  background: transparent;
+  margin-top: 50px;
+  text-align: left;
+}
+
+.delete-btn {
+  font-size: 14px;
+  color: #aaa;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(200, 180, 160, 0.15);
+  display: inline-block;
+  opacity: 0.7;
+}
+
+.delete-btn:hover {
+  color: #5a5a5a;
+  border-bottom: 1px solid rgba(180, 160, 140, 0.3);
+  opacity: 1;
+}
+
+/* ===== Responsive Design ===== */
+
 @media screen and (max-width: 1024px) {
+  .spots-show-container {
+    padding: 50px 20px;
+  }
 
+  .paper-main-layout {
+    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery-image {
+    max-height: 450px;
+  }
 }
-
-
-
 
 @media screen and (max-width: 768px) {
-    
-}
+  .spots-show-container {
+    padding: 30px 16px;
+  }
 
+  .paper-main-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
 
-@media screen and (max-width: 600px) {
-body{
-  padding: 0;
-  /* margin: 10px; */
-}
-.topper-link{
-    font-size: 20px;
-}
-
-.diary-page {
-    padding: 20px;
-}
-
-.diary-title{
-    font-size: 24px;
-
-}
-
-.diary-text {
+  .paper-left-section {
+    gap: 30px;
     padding: 30px;
-    font-size: 12px;
-    line-height: 2.1;    
+  }
+
+  .gallery-image {
+    max-height: 350px;
+  }
+
+  .paper-content {
+    padding: 30px;
+  }
+
+  .paper-content p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .paper-footer {
+    padding: 30px 0 0 0;
+    margin-top: 35px;
+  }
+
+  .like-action {
+    padding: 8px 0;
+  }
 }
 
-.info-label{
-    font-size: 10px;
-}
+@media screen and (max-width: 480px) {
+  .spots-show-container {
+    padding: 20px 12px;
+  }
 
-.info-item{
-    font-size: 13px;
-    margin-bottom: 30px;
-}
+  .paper-main-layout {
+    gap: 25px;
+  }
 
-.info-delete{
+  .paper-left-section {
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .gallery-image {
+    max-height: 280px;
+  }
+
+  .paper-content {
+    padding: 20px;
+  }
+
+  .paper-content p {
     font-size: 14px;
-    margin:0 0 50px 30px;
+    line-height: 1.7;
+  }
+
+  .paper-footer {
+    padding: 20px 0 0 0;
+    margin-top: 25px;
+  }
+
+  .like-action {
+    padding: 8px 0;
+  }
+
+  .like-btn {
+    font-size: 20px;
+  }
+
+  .info-label {
+    font-size: 10px;
+  }
+
+  .info-value {
+    font-size: 14px;
+  }
+
+  .delete-btn {
+    font-size: 13px;
+  }
 }
-
-
-
-
-
-}
-@import "pages/spot.show";

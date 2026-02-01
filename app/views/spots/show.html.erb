@@ -1,67 +1,52 @@
-﻿
-<p>
-<div class="diary-page">
-
-  <h1 class="diary-title"><%= @spot.title %></h1>
-
-  
-
-  <div class="diary-image">
-    <% if @spot.images.attached? %>
-      <% @spot.images.each do |image| %>
-        <%= image_tag image.variant(resize_to_limit: [400, 400]), class: "diary-photo" %>
-      <% end %>
-    <% end %>
-  </div>
-
-  <div class="diary-text">
-    <p><%= simple_format(@spot.description) %></p>
-  </div>
-
-  <div class="like-button">
-    <% if user_signed_in? %>
-      <% if current_user.likes.exists?(spot: @spot) %>  
-        <%= link_to spot_like_path(@spot), data: { turbo_method: :delete } do %>
-          <i class="fa-solid fa-heart"></i>
+<div class="spots-show-container">
+    <div class="paper-main-layout">
+      <div class="paper-left-section">
+        <% if @spot.images.attached? %>
+          <% @spot.images.each do |image| %>
+            <img src="<%= url_for(image.variant(resize_to_limit: [500, 500])) %>" alt="" class="gallery-image" />
+          <% end %>
         <% end %>
 
-      <% else %>
-        <%= link_to spot_like_path(@spot), data: { turbo_method: :post } do %>
-          <i class="fa-regular fa-heart"></i>
-        <% end %>
+        <div class="left-info-section">
+          <% if user_signed_in? %>
+            <div class="like-action">
+              <% if current_user.likes.exists?(spot: @spot) %>  
+                <%= link_to spot_like_path(@spot), data: { turbo_method: :delete }, class: "like-btn liked" do %>
+                  <i class="fa-solid fa-heart"></i>
+                <% end %>
+              <% else %>
+                <%= link_to spot_like_path(@spot), data: { turbo_method: :post }, class: "like-btn" do %>
+                  <i class="fa-regular fa-heart"></i>
+                <% end %>
+              <% end %>
+              <span class="like-count"><%= @spot.likes.count %></span>
+            </div>
+          <% end %>
+
+          <div class="info-group">
+            <span class="info-label">Author</span>
+            <% if @spot.user.present? %>
+              <%= link_to @spot.user.name, user_path(@spot.user), class: "info-value" %>
+            <% else %>
+              <span class="info-value">ゲスト</span>
+            <% end %>
+          </div>
+
+          <div class="info-group">
+            <span class="info-label">Location</span>
+            <%= link_to @spot.location, "https://www.google.com/maps/search/?api=1&query=#{ERB::Util.url_encode(@spot.location)}", target: "_blank", rel: "noopener", class: "info-value" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="paper-content">
+        <%= simple_format(@spot.description) %>
+      </div>
+    </div>
+
+    <footer class="paper-footer">
+      <% if user_signed_in? && current_user == @spot.user %>
+        <%= link_to '削除', spot_path(@spot), data: { turbo_method: "delete", turbo_confirm: '本当に削除しますか?'}, class: "delete-btn" %>
       <% end %>
-      <span class="like-count" > <%= @spot.likes.count %></span>
-    <% end %>
+    </footer>
   </div>
-
-</div>
-
-<div class="spot-info">
-
-  <div class="info-item">
-    <span class="info-label">Name</span>
-    <span class="info-value">
-      <% if @spot.user.present? %>
-        <%= link_to @spot.user.name, user_path(@spot.user) %>
-      <% else %>
-        ゲスト
-      <% end %>
-    </span>
-    
-  </div>
-
-  <div class="info-item">
-    <span class="info-label">Location</span>
-    <%= link_to @spot.location, "https://www.google.com/maps/search/?api=1&query=#{ERB::Util.url_encode(@spot.location)}", target: "_blank", rel: "noopener", class: "info-value" %>
-  </div>
-</div>
-
-
-
-
-
-<div class= "info-delete">
-  <% if user_signed_in? && current_user == @spot.user %>
-    <%= link_to '削除', spot_path(@spot), data: { turbo_method: "delete", turbo_confirm: '本当に削除しますか?'}, class: "info-value" %>
-  <% end %>
-</div>
