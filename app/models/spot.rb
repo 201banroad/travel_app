@@ -16,8 +16,10 @@ class Spot < ApplicationRecord
 
     # 画像以外投稿できないバリテーション
     validate :images_must_be_images
+    # 画像の枚数制限
+    validate :images_limit
 
-        # 写真何枚でもOKな処理
+    # 写真の添付設定
     has_many_attached :images
 
     belongs_to :user, optional: true
@@ -39,11 +41,16 @@ class Spot < ApplicationRecord
   def description_line_limit
     return if description.blank?
 
-    max_lines = 20
+    max_lines = 10
     if description.count("\n") >= max_lines
       errors.add(:description, "は#{max_lines}行以内で入力してください")
     end
   end
 
+  def images_limit
+    if images.attached? && images.count > 4
+      errors.add(:images, "は4枚以内でアップロードしてください")
+    end
+  end
+
 end
-# ここはモデル
