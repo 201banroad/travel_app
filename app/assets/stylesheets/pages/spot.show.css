@@ -1,5 +1,17 @@
 /* ===== Spots Show - Elegant Minimal Ethereal Design ===== */
 
+/* フェード・イン アニメーション */
+@keyframes fadeInEthereal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .spots-show-container {
   padding: 60px 20px;
   min-height: 100vh;
@@ -17,6 +29,8 @@
   border-bottom: 1px solid rgba(180, 160, 140, 0.15);
   font-weight: 300;
   letter-spacing: 1px;
+  animation: fadeInEthereal 0.8s ease-out 0.1s forwards;
+  opacity: 0;
 }
 
 /* ===== Main Layout ===== */
@@ -25,7 +39,8 @@
   grid-template-columns: 1.2fr 1fr;
   gap: 6px;
   align-items: stretch;
-
+  animation: fadeInEthereal 0.8s ease-out 0.2s forwards;
+  opacity: 0;
 }
 .paper-left-section {
   display: flex;
@@ -40,10 +55,10 @@
   max-height: 550px;
   object-fit: cover;
   border: none;
-  opacity: 0.9;
+  opacity: 0;
   background: #ffffff;
   padding: 50px 30px;
-
+  animation: fadeInEthereal 0.8s ease-out 0.3s forwards;
 }
 
 
@@ -52,6 +67,8 @@
   flex-direction: column;
   gap: 30px;
   padding-top: 20px;
+  animation: fadeInEthereal 0.8s ease-out 0.4s forwards;
+  opacity: 0;
 }
 
 .like-action {
@@ -127,6 +144,8 @@
   padding: 40px;
   writing-mode: vertical-rl;
   text-orientation: mixed;
+  animation: fadeInEthereal 0.8s ease-out 0.25s forwards;
+  opacity: 0;
 }
 
 .paper-content p {
@@ -151,21 +170,22 @@
   background: transparent;
   margin-top: 50px;
   text-align: left;
+  animation: fadeInEthereal 0.8s ease-out 0.5s forwards;
+  opacity: 0;
 }
 
 .delete-btn {
   font-size: 14px;
-  color: #aaa;
+  color: #5a5a5a;
   text-decoration: none;
   transition: all 0.3s ease;
   padding: 10px 0;
   border-bottom: 1px solid rgba(200, 180, 160, 0.15);
   display: inline-block;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .delete-btn:hover {
-  color: #5a5a5a;
   border-bottom: 1px solid rgba(180, 160, 140, 0.3);
   opacity: 1;
 }
