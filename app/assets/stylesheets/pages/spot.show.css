@@ -13,21 +13,21 @@
 }
 
 .spots-show-container {
+  margin: 70px auto 0;
   padding: 60px 20px;
+  background: #fefdfb;
   min-height: 100vh;
-  /* background: #fefdfb; */
   max-width: 1100px;
-  margin-top: 70px;
 }
 
 .spot-title {
   font-size: 32px;
   font-family: 'Sawarabi Mincho', serif;
   color: #5a5a5a;
-  margin: 0 0 40px 0;
-  padding-bottom: 20px;
+  margin: 0 0 20px 40px;
+  padding-bottom: 10px;
   border-bottom: 1px solid rgba(180, 160, 140, 0.15);
-  font-weight: 300;
+  font-weight: 100;
   letter-spacing: 1px;
   animation: fadeInEthereal 0.8s ease-out 0.1s forwards;
   opacity: 0;
@@ -53,7 +53,7 @@
   width: 100%;
   height: auto;
   max-height: 550px;
-  object-fit: cover;
+  object-fit: contain;
   border: none;
   opacity: 0;
   background: #ffffff;
@@ -138,10 +138,11 @@
 }
 
 .paper-content {
+  margin: 100px auto;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 40px;
+  /* padding: 40px; */
   writing-mode: vertical-rl;
   text-orientation: mixed;
   animation: fadeInEthereal 0.8s ease-out 0.25s forwards;
