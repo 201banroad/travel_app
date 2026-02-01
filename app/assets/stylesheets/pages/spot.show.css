@@ -147,9 +147,11 @@
   text-orientation: mixed;
   animation: fadeInEthereal 0.8s ease-out 0.25s forwards;
   opacity: 0;
+
 }
 
 .paper-content p {
+  max-height: 900px;
   font-size: 16px;
   line-height: 2.7;
   color: #5a5a5a;
