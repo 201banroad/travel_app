@@ -52,6 +52,7 @@
   width: 100%;
   height: auto;
   max-height: 750px;
+  min-width: 400px;
   object-fit: contain;
   border: none;
   opacity: 0;
@@ -140,7 +141,7 @@
 }
 
 .paper-content p {
-  max-height: 900px;
+  max-height: 1300px;
   font-size: 16px;
   line-height: 2.7;
   color: #5a5a5a;
@@ -189,7 +190,7 @@
 @media screen and (max-width: 1024px) {
 
   .paper-main-layout {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 40px;
   }
 
@@ -201,6 +202,9 @@
     font-size: 26px;
     margin: 0 0 18px 30px;
   }
+  .paper-content p {
+    max-height: 900px;
+  }
 }
 
 /* Small Tablet: 768px以下 */ 
@@ -209,6 +213,10 @@
     padding: 40px 24px;
     margin: 30px auto 0;
     max-width: 100%;
+  }
+
+  .gallery-image {
+    min-width: 100px;
   }
 
   .spot-title {
@@ -234,6 +242,8 @@
     font-size: 15px;
     line-height: 2.3;
     text-underline-offset: 5px;
+    max-height: 1300px;
+  
   }
 
 
@@ -258,9 +268,10 @@
     gap: 14px;
     padding-top: 12px;
   }
-.delete-button {
-  position: relative;
-  top: 0px;
-  left: 20px;
+  .delete-button {
+    position: relative;
+    top: 0px;
+    left: 20px;
+  }
 
 }

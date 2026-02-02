@@ -4,7 +4,7 @@ class Spot < ApplicationRecord
     length: { maximum: 30, message: "は30文字以内で入力してください" }
 
     validates :description, presence: { message: "魅力は必須です" },
-    length: { maximum: 700, message: "は700文字以内で入力してください" }
+    length: { maximum: 500, message: "は500文字以内で入力してください" }
 
     validates :location,
     length: { maximum: 15, message: "は15文字以内で入力してください" }
