@@ -181,12 +181,14 @@
 
 /* ===== Responsive Design ===== */
 
-/* Tablet: 1024px以下 */
+/* Tablet: 1024px以下 */ 
+
+
 @media screen and (max-width: 1024px) {
-  .spots-show-container {
+  /* .spots-show-container {
     padding: 50px 30px;
     margin: 60px auto 0;
-  }
+  } */
 
   .paper-main-layout {
     grid-template-columns: 1fr 1fr;
@@ -198,7 +200,7 @@
   }
 
   .spot-title {
-    font-size: 28px;
+    font-size: 26px;
     margin: 0 0 18px 30px;
   }
 }
