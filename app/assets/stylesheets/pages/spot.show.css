@@ -37,7 +37,7 @@
 .paper-main-layout {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 6px;
+  gap: 48px;
   align-items: stretch;
   animation: fadeInEthereal 0.8s ease-out 0.2s forwards;
   opacity: 0;
@@ -130,15 +130,10 @@
 .info-value:hover {
   border-bottom: 0.8px solid rgb(192, 179, 166);
 }
-/* ーーーーーーーーーーーーーーーーーーここまで確認した */
+
 .paper-content {
-  margin: 100px auto;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  /* padding: 40px; */
+  margin: 30px auto;
   writing-mode: vertical-rl;
-  text-orientation: mixed;
   animation: fadeInEthereal 0.8s ease-out 0.25s forwards;
   opacity: 0;
 
@@ -151,22 +146,19 @@
   color: #5a5a5a;
   font-family: 'Sawarabi Mincho', serif;
   margin: 0;
-  opacity: 0.8;
+  opacity: 0.7;
   font-weight: 300;
   text-decoration: underline 0.1px rgb(146, 150, 162);
   text-shadow: 1px 2px 20px rgba(132, 124, 124, 0.3);
   text-underline-offset: 8px;
-  writing-mode: vertical-rl;
+  /* writing-mode: vertical-rl; */
   text-orientation: upright;
 
 }
 
 /* ===== Footer ===== */
 .paper-footer {
-  padding: 40px 0 0 0;
-  background: transparent;
   margin-top: 50px;
-  text-align: left;
   animation: fadeInEthereal 0.8s ease-out 0.5s forwards;
   opacity: 0;
 }
@@ -176,14 +168,14 @@
   color: #5a5a5a;
   text-decoration: none;
   transition: all 0.3s ease;
-  padding: 10px 0;
+  padding: 5px ;
   border-bottom: 1px solid rgba(200, 180, 160, 0.15);
   display: inline-block;
-  opacity: 0.9;
+  opacity: 0.7;
 }
 
 .delete-btn:hover {
-  border-bottom: 1px solid rgba(180, 160, 140, 0.3);
+  border-bottom: 1px solid rgba(133, 121, 108, 0.3);
   opacity: 1;
 }
 
