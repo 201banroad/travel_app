@@ -181,108 +181,166 @@
 
 /* ===== Responsive Design ===== */
 
+/* Tablet: 1024px以下 */
 @media screen and (max-width: 1024px) {
   .spots-show-container {
-    padding: 50px 20px;
+    padding: 50px 30px;
+    margin: 60px auto 0;
   }
 
   .paper-main-layout {
-    gap: 40px;
     grid-template-columns: 1fr 1fr;
+    gap: 40px;
   }
 
   .gallery-image {
     max-height: 450px;
   }
+
+  .spot-title {
+    font-size: 28px;
+    margin: 0 0 18px 30px;
+  }
 }
 
+/* Small Tablet: 768px以下 */
 @media screen and (max-width: 768px) {
   .spots-show-container {
-    padding: 30px 16px;
+    padding: 40px 24px;
+    margin: 50px auto 0;
+    max-width: 100%;
+  }
+
+  .spot-title {
+    font-size: 24px;
+    margin: 0 0 16px 20px;
+    border-bottom: 1px solid rgba(180, 160, 140, 0.1);
   }
 
   .paper-main-layout {
     grid-template-columns: 1fr;
-    gap: 35px;
+    gap: 32px;
   }
 
   .paper-left-section {
-    gap: 30px;
-    padding: 30px;
+    gap: 28px;
   }
 
   .gallery-image {
-    max-height: 350px;
+    max-height: 380px;
   }
 
   .paper-content {
-    padding: 30px;
+    writing-mode: vertical-rl;
+    padding: 24px 0;
+    margin: 20px auto;
   }
 
   .paper-content p {
     font-size: 15px;
-    line-height: 1.8;
+    line-height: 1.9;
+    text-orientation: upright;
+    text-underline-offset: 5px;
   }
 
-  .paper-footer {
-    padding: 30px 0 0 0;
-    margin-top: 35px;
-  }
-
-  .like-action {
-    padding: 8px 0;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .spots-show-container {
-    padding: 20px 12px;
-  }
-
-  .paper-main-layout {
-    gap: 25px;
-  }
-
-  .paper-left-section {
-    gap: 20px;
-    padding: 20px;
-  }
-
-  .gallery-image {
-    max-height: 280px;
-  }
-
-  .paper-content {
-    padding: 20px;
-  }
-
-  .paper-content p {
-    font-size: 14px;
-    line-height: 1.7;
-  }
-
-  .paper-footer {
-    padding: 20px 0 0 0;
-    margin-top: 25px;
-  }
-
-  .like-action {
-    padding: 8px 0;
-  }
-
-  .like-btn {
-    font-size: 20px;
+  .left-info-section {
+    gap: 18px;
+    padding-top: 16px;
   }
 
   .info-label {
-    font-size: 10px;
+    font-size: 12px;
+    letter-spacing: 1.2px;
   }
 
   .info-value {
-    font-size: 14px;
+    font-size: 15px;
+  }
+
+  .paper-footer {
+    margin-top: 32px;
   }
 
   .delete-btn {
     font-size: 13px;
+  }
+}
+
+/* Mobile: 480px以下 */
+@media screen and (max-width: 480px) {
+  .spots-show-container {
+    padding: 24px 16px;
+    margin: 40px auto 0;
+  }
+
+  .spot-title {
+    font-size: 20px;
+    margin: 0 0 14px 16px;
+  }
+
+  .paper-main-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .paper-left-section {
+    gap: 16px;
+  }
+
+  .gallery-image {
+    max-height: 300px;
+  }
+
+  .paper-content {
+    writing-mode: vertical-rl;
+    padding: 16px 0;
+    margin: 16px auto;
+  }
+
+  .paper-content p {
+    font-size: 14px;
+    line-height: 1.8;
+    text-shadow: 1px 1px 12px rgba(132, 124, 124, 0.2);
+    text-underline-offset: 4px;
+  }
+
+  .left-info-section {
+    gap: 14px;
+    padding-top: 12px;
+  }
+
+  .info-group {
+    gap: 0;
+  }
+
+  .info-label {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .info-value {
+    font-size: 13px;
+  }
+
+  .like-action {
+    padding: 6px 0;
+  }
+
+  .like-btn {
+    font-size: 18px;
+  }
+
+  .like-count {
+    font-size: 12px;
+  }
+
+  .paper-footer {
+    margin-top: 20px;
+    padding: 16px 0 0 0;
+  }
+
+  .delete-btn {
+    font-size: 12px;
+    padding: 4px;
   }
 }
