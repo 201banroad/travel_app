@@ -246,11 +246,11 @@
   top: 5px;
   right: 5px;
   background-color: #cde4e6;
-  background: none;        /* 背景を透明に */
-  border: none;            /* 枠線を消す */
+  background: none;    
+  border: none;            
   font: inherit;           /* ボタン特有のフォントをリセット */
-  color: #b33;             /* 赤系のテキストカラー */
-  cursor: pointer;         /* ホバーでポインターにする */
+  color: #b33;            
+  cursor: pointer;        
   text-decoration: none; 
 
 }

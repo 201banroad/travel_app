@@ -47,7 +47,7 @@
 
     <footer class="paper-footer">
       <% if user_signed_in? && current_user == @spot.user %>
-        <%= link_to '削除', spot_path(@spot), data: { turbo_method: "delete", turbo_confirm: '本当に削除しますか?'}, class: "delete-btn" %>
+        <%= link_to '削除', spot_path(@spot), data: { turbo_method: "delete", turbo_confirm: '本当に削除しますか?'}, class: "delete-button" %>
       <% end %>
     </footer>
   </div>
