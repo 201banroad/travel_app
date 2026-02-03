@@ -23,16 +23,19 @@
 }
 
 .spot-title {
-  font-size: 32px;
+  font-size: 24px;
   font-family: 'Sawarabi Mincho', serif;
   color: #5a5a5a;
   margin: 0 0 20px 40px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(180, 160, 140, 0.15);
   font-weight: 100;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   animation: fadeInEthereal 0.8s ease-out 0.1s forwards;
   opacity: 0;
+  max-width: calc(100% - 40px);
+  overflow-x: auto;
+  text-overflow: clip;
 }
 
 /* ===== Main Layout ===== */
@@ -203,8 +206,9 @@
   }
 
   .spot-title {
-    font-size: 26px;
+    font-size: 22px;
     margin: 0 0 18px 30px;
+    letter-spacing: 1px;
   }
   .paper-content p {
     max-height: 900px;
@@ -221,8 +225,9 @@
   }
 
   .spot-title {
-    font-size: 24px;
-    margin: 0 0 16px 20px;
+    font-size: 19px;
+    letter-spacing: 0.1px;
+
     border-bottom: 1px solid rgba(180, 160, 140, 0.1);
   }
   
@@ -237,7 +242,6 @@
 
   .paper-content p {
     font-size: 15px;
-    line-height: 2.0;
     text-underline-offset: 5px;
     max-height: 1300px;
   
@@ -257,7 +261,7 @@
   }
 
   .spot-title {
-    font-size: 20px;
+    font-size: 21px;
     margin: 0 0 14px 8px;
   }
 
@@ -265,11 +269,18 @@
     gap: 14px;
     padding-top: 12px;
   }
+
+  .paper-content p {
+
+    line-height: 1.7;
+  }
+
   .delete-button {
     position: relative;
     top: 0px;
     left: 20px;
   }
+
 
 
 
