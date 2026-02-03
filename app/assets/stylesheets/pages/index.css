@@ -56,6 +56,10 @@ body {
     animation: fadeInDown 1s ease-out;
 }
 
+.topper h1 br.break-title {
+    display: none;
+}
+
 .topper h1::after {
     content: '';
     position: absolute;
@@ -176,6 +180,14 @@ h3{
     opacity: 0.9;
 }
   
+
+@media screen and (max-width: 920px) {
+
+.topper h1 br.break-title {
+    display: block;
+}
+
+}
 
 @media screen and (max-width: 420px) {
 
