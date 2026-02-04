@@ -33,7 +33,6 @@ body {
     line-height: 1.8;
     font-family: 'Shippori Mincho B1', serif;
     color: #4a4540;
-    min-height: 100vh;
 }
 
 .topper h1 {
@@ -75,14 +74,14 @@ body {
   
 .message {
     text-align: center;
-    max-width: 700px;
+    max-width: 600px;
     margin: 0 auto 10px;
 
 }
   
 .message p {
     opacity: 0.6;
-    font-size: 0.95em;
+    font-size: 1rem;
     line-height: 3.9;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.15) 100%);
     padding: 40px 35px;
@@ -114,7 +113,6 @@ body {
 
 .spot-card {
     background: transparent;
-    border: none;
     width: 300px;
     padding: 15px;
     box-shadow: 0 1px 17px rgba(0, 0, 0, 0.03);
@@ -125,7 +123,7 @@ body {
   
 .spot-card:hover {
     box-shadow: 0 20px 90px rgba(0, 0, 0, 0.20), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(18px);
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.2) 100%);
 }
   
@@ -134,7 +132,6 @@ body {
   height: 220px;
   object-fit: contain;
   object-position: center;
-  background-color: transparent;
   transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   display: block;
   border-bottom: 1px solid rgba(100, 90, 80, 0.15);
@@ -145,9 +142,7 @@ body {
 h3{
     font-family: 'Noto Serif JP', serif;
     color: #3d3835;
-    /* letter-spacing: 0.02px; */
     text-shadow: 1px 2px 30px rgba(0, 0, 0, 0.08);
-    border: none;
     padding: 10px 20px ;
     margin-top: 18px;
     margin-bottom: 22px;
@@ -177,7 +172,7 @@ h3{
 }
 
 .spot-card:hover p {
-    opacity: 0.9;
+    opacity: 1;
 }
   
 

@@ -13,19 +13,19 @@
     </div>
 
     <div class="spot-list">
-  <% @spots.each do |spot| %>
-    <%= link_to spot_path(spot), class: "spot-card-link" do %>
-      <div class="spot-card">
-        <% if spot.images.attached? %>
-          <%= image_tag spot.images.first %>
-        <% end %>
+      <% @spots.each do |spot| %>
+        <%= link_to spot_path(spot), class: "spot-card-link" do %>
+          <div class="spot-card">
+            <% if spot.images.attached? %>
+              <%= image_tag spot.images.first %>
+            <% end %>
 
-        <h3><%= spot.title %></h3>
-        <p><%= spot.user&.name || "ゲスト" %></p>
-      </div>
-    <% end %>
-  <% end %>
-</div>
+            <h3><%= spot.title %></h3>
+            <p><%= spot.user&.name || "ゲスト" %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
     
 </div>
 
