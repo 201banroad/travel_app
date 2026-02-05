@@ -9,6 +9,19 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
+/* ページ固有のbodyスタイル */
+body {
+  background: linear-gradient(135deg, #faf8f6 0%, #f5f3f0 50%, #ece8e3 100%);
+  background-attachment: fixed;
+  padding: 60px;
+  line-height: 1.8;
+  font-family: 'Shippori Mincho B1', serif;
+  color: #4a4540;
+  overflow-x: hidden;
+
+}
+
+
 
   .green-button {
       background: rgba(90, 142, 111, 0.08);
