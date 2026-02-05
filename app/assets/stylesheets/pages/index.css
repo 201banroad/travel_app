@@ -50,6 +50,10 @@
     display: none;
 }
 
+.message p br.break-message {
+    display: none;
+}
+
 .topper h1::after {
     content: '';
     position: absolute;
@@ -175,11 +179,15 @@ h3{
 
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 560px) {
 
 .topper h1 {
-    font-size: 22px;
+    font-size: 25px;
     margin: 70px auto 80px;
+}
+
+.message p br.break-message {
+    display: block;
 }
 
 .message p {

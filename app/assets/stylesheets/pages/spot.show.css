@@ -255,9 +255,9 @@
 
 /* Mobile: 524px以下 */
 @media screen and (max-width: 524px) {
-  body {
+  /* body {
   padding: 0 10px;
-  }
+  } */
 
   .spots-show-container {
     padding: 20px 8px;

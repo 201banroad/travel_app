@@ -75,7 +75,11 @@ body {
     align-items: center;
   }
 
-  
+@media screen and (max-width: 524px) {
+  body {
+    padding: 0 10px;
+  }
+}
   
   
  

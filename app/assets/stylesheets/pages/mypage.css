@@ -1,6 +1,9 @@
 .profile-wrapper{
   width: 100%;
   display: flex;
+  gap: 110px;
+  justify-content: center;  /* 横方向の中央寄せ */
+
   /* box-sizing: border-box; */
 }
 
@@ -59,8 +62,8 @@
 
 .settings-tab {
   position: absolute;
-  top: 30px;
-  right: 140px;
+  top: 50px;
+  right: 70px;
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   z-index: 10;
 }
@@ -121,7 +124,7 @@
   font-size: 14px;
   text-decoration: none;
   margin-top: 1rem;
-  margin-left: 24rem;
+  margin-left: 31rem;
   margin-bottom: 20px;
   background: transparent;
   color: #6b7280;
@@ -146,18 +149,16 @@
 
 
 .sticky-container {
-  /* position: relative; */
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 160px); /* 3列、幅固定！ */
   width: 100%;
-  /* height: 300px; 必要に応じて調整 */
-  /* margin-top: 15px; */
-  
 }
 
 
 .sticky-note {
   /* position: relative; 削除ボタンのために残す */
+
   margin-left: 20px;
   word-break: break-word;
   font-size: 12px;
@@ -379,7 +380,7 @@ input[type="radio"]:checked + label {
 }
 
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーータブレット・スマホ向け (768px以下) */
-@media screen and (max-width: 794px) {
+@media screen and (max-width: 800px) {
 
   .profile-wrapper {
     flex-direction: column; /* プロフィール部分を縦に並べる */
