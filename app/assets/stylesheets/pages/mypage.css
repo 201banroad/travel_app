@@ -375,29 +375,39 @@ input[type="radio"]:checked + label {
     width: 130px;
     height: 120px;    
   }
-
-  .mypage-spots{
-  width: 280px;
-  }
-
 }
 
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーータブレット・スマホ向け (768px以下) */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
 
   .profile-wrapper {
-    flex-direction: column; /* プロフィール部分を縦に並べる */
-    gap: 10px;
+    flex-direction: column;
+    gap: 80px;
+    margin:30px 0;
+  }
+
+  .profile-image-text{
+    display: flex;
+    justify-content:center;
+    gap: 70px;
   }
 
   .profile-box {
     /* flex-basis: 100%; 横幅100%にして、1列に並べる */
     margin-left: 0;
+    display:flex;
+    align-items:flex-start;
+    flex-direction: column; 
+
   }
 
+  
+
   .profile-name {
+    display:inline-block;
     font-size: 16px; 
     padding-top: 10px;
+    padding-right:70px;
     border-bottom: 1px solid	 #516d31;
   }
 
@@ -416,7 +426,7 @@ input[type="radio"]:checked + label {
 
   .settings-tab ul {
     flex-direction: row;
-    gap: 10px;
+    gap: 5px;
   }
 
   .settings-tab li {
@@ -431,94 +441,81 @@ input[type="radio"]:checked + label {
   }
 
   .sticky-container {
-    height: 150px; /* 付箋エリアの高さ調整 */
-    position: relative; /* ← これが大事！ */
+    display: grid;
+    grid-template-columns: repeat(3, 160px);
+    width: 100%;
   }
 
   .sticky-note {
     width: 150px;
     height: 130px;
     font-size: 12px;
-  position: absolute; /* ← 重ねるにはこれが必要 */
-  top: 28px;
-  left: 5px;
-  transform: rotate(-1deg); /* 少し傾けて「無造作感」を演出 */
-  z-index: 1;
-  opacity: 0.9;
-}
+    position: relative;
+    margin-left: 20px;
+    opacity: 0.9;
+  }
 
-/* 少しずつズラして見せたい場合 */
-.sticky-note:nth-child(2) {
-  top: 25px;
-  left: 35px;
-  /* transform: rotate(1deg); */
-  z-index: 2;
-}
+  /* 無造作に傾き + ゆらぎ */
+  .sticky-note:nth-child(odd) {
+    transform: rotate(-2deg) scale(0.99) translateY(-1px);
+  }
 
-.sticky-note:nth-child(3) {
-  top: 27px;
-  left: 65px;
-  transform: rotate(-1deg);
-  z-index: 3;
-}
+  .sticky-note:nth-child(even) {
+    transform: rotate(1.5deg) scale(1.01) translateY(1px);
+  }
 
-.sticky-note:nth-child(4) {
-  top: 29px;
-  left: 95px;
-  transform: rotate(-1deg);
-  z-index: 4;
-}
+  /* ホバー時に前へ動く */
+  .sticky-note:hover {
+    transform: rotate(0deg) scale(1.02);
+    z-index: 10;
+    opacity: 1;
+  } 
 
-.sticky-note:nth-child(5) {
-  top: 26px;
-  left: 125px;
-  transform: rotate(-1deg);
-  z-index: 5;
-}
-/* ホバー時に前へ動く */
-.sticky-note:hover {
-  transform: rotate(0deg) scale(1);
-  transition: transform 0.1s ease;
-  z-index: 10;
-  opacity: 1;
-} 
+  .sticky-link a{
+    display: inline-block;
+    margin-top: 1rem;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    top: 820px;
+    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 6px 13px;
+  }
 
-.sticky-link a{
-  /* display:block; */
-  margin: 0;
-  position:relative;
-  top: 730px;
-  font-size:15px;
-  box-shadow:none;
-  padding: 3px 9px;
+  .flash-alert{
+    font-size: 13px;
+    display: inline-block;
+    background-color: #aab9bb;
+    margin-top: 1rem;
+    margin-left: 20px;
+  }
+
+  .tab-wrapper{
+    margin-top: 285px;
+  }
   
-
-}
-
-
-.flash-alert{
-  margin: 0;
-  position:relative;
-  top: 450px;
-  left: 10px;
-  font-size: 12px;
-}
-
-.tab-wrapper{
-margin-top:270px;
-}
-
-.tab-content {
+  .tab-content {
     display: flex !important;
     flex-direction: column;
+    justify-content: center;
     gap: 60px; /* カード間の余白 */
   }
 
+
+
+  /* .mypage-spots {
+    padding: 100px 70px;
+    margin-left: 170px;
+  } */
+
 }
+
+
 
 /* ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーここから最小スマホ */
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 635px) {
 
   /* 外側の不要な余白を削除 */
 /* body{ */
@@ -551,6 +548,8 @@ margin-top:270px;
 .profile-text{
   box-sizing: border-box;
   width: 100%;
+  max-width: 300px;
+  min-width: 250px;
   padding: 10px 30px 5px 30px;
 }
 
@@ -572,9 +571,6 @@ margin-top:270px;
 }
 
 .settings-tab a {
-  font-size: 9px;
-  padding: 5px 9px;
-  min-width: 85px;
   letter-spacing: 0.5px;
 }
 
@@ -598,28 +594,28 @@ margin-top:270px;
 /* 少しずつズラして見せたい場合 */
 .sticky-note:nth-child(2) {
   top: 25px;
-  left: 35px;
+  left: 30px;
   /* transform: rotate(1deg); */
   z-index: 2;
 }
 
 .sticky-note:nth-child(3) {
   top: 27px;
-  left: 65px;
+  left: 55px;
   transform: rotate(-1deg);
   z-index: 3;
 }
 
 .sticky-note:nth-child(4) {
   top: 29px;
-  left: 95px;
+  left: 80px;
   transform: rotate(-1deg);
   z-index: 4;
 }
 
 .sticky-note:nth-child(5) {
   top: 26px;
-  left: 125px;
+  left: 105px;
   transform: rotate(-1deg);
   z-index: 5;
 }
@@ -640,7 +636,6 @@ margin-top:270px;
   font-size:13px;
   box-shadow:none;
   padding: 3px 9px;
-  border-bottom: 1px solid	 #516d31;
 }
 
 .sticky-link a:hover {
@@ -675,4 +670,68 @@ margin-top:100px;
   }
 
 
+}
+
+@media screen and (max-width: 524px) {
+  .profile-image-text{
+    display:block;
+  }
+
+  .sticky-note {
+    width: 120px;
+    height: 100px;
+    font-size: 12px;
+    position: absolute; 
+    top: 28px;
+    left: 5px;
+    transform: rotate(-1deg);
+    z-index: 1;
+    opacity: 0.9;
+  }
+
+  .sticky-note:nth-child(2) {
+    top: 25px;
+    left: 27px;
+    z-index: 2;
+  }
+
+  .sticky-note:nth-child(3) {
+    top: 27px;
+    left: 49px;
+    transform: rotate(-1deg);
+    z-index: 3;
+  }
+
+  .sticky-note:nth-child(4) {
+    top: 29px;
+    left: 71px;
+    transform: rotate(-1deg);
+    z-index: 4;
+  }
+
+  .sticky-note:nth-child(5) {
+    top: 26px;
+    left: 93px;
+    transform: rotate(-1deg);
+    z-index: 5;
+  }
+
+  .sticky-note:hover {
+    transform: rotate(0deg) scale(1);
+    transition: transform 0.1s ease;
+    z-index: 10;
+    opacity: 1;
+  }
+
+  .sticky-link a{
+    /* display:block; */
+    margin: 0;
+    position:relative;
+    top: 730px;
+    font-size:13px;
+    box-shadow:none;
+    padding: 3px 9px;
+  }
+
+  
 }
