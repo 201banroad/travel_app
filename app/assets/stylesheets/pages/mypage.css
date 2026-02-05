@@ -59,39 +59,51 @@
 }
 
 .settings-tab {
-  height: 65px;
   position: absolute;
-  top: 40px;
-  right: 50px;
-  background-color: #f9f1e4ed;
-  padding: 0px 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+  top: 30px;
+  right: 40px;
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   z-index: 10;
-  opacity:0.6;
-
 }
 
 .settings-tab ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .settings-tab li {
-  margin-bottom: 8px;
+  margin: 0;
 }
 
 .settings-tab a {
   text-decoration: none;
-  color: #3b372d;
-  font-weight: bold;
+  color: #6b6b5f;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: block;
+  padding: 10px 16px;
+  border-radius: 20px;
+  background: rgba(249, 241, 228, 0.45);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(200, 180, 160, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  text-align: center;
+  min-width: 110px;
+  opacity: 0.75;
 }
 
 .settings-tab a:hover {
-  color: #2e6a4f;
+  color: #3d6b52;
+  background: rgba(249, 241, 228, 0.65);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.4);
+  opacity: 1;
+  transform: translateY(-2px);
 }
 
 /* マイページの付箋ーーーーーーーーーーーーーーー */
@@ -224,8 +236,8 @@
   box-sizing: border-box; /* パディングやボーダーを幅に含める */
   padding: 100px 70px;
   margin-left: 30px;
-  border-radius: 8px;
   opacity: 0.7;
+  border-bottom: 1px solid rgba(146, 115, 84, 0.3);
 
 }
 
@@ -323,8 +335,6 @@ input[type="radio"]:checked + label {
   }
   
 
-
-
   .profile-name {
     font-size: 16px; /* プロフィール名のフォントサイズ調整 */
   }
@@ -334,6 +344,22 @@ input[type="radio"]:checked + label {
     padding: 20px;
     /* margin-right:200px; */
     margin-left: 0;/* 左に余白がある場合０にする */
+  }
+
+  .settings-tab {
+    top: 25px;
+    right: 30px;
+  }
+
+  .settings-tab ul {
+    gap: 10px;
+  }
+
+  .settings-tab a {
+    font-size: 11px;
+    padding: 8px 12px;
+    min-width: 100px;
+    letter-spacing: 0.8px;
   }
 
   .sticky-container {
@@ -348,14 +374,8 @@ input[type="radio"]:checked + label {
     height: 120px;    
   }
 
-
-
-
   .mypage-spots{
   width: 280px;
-  
-
-
   }
 
 }
@@ -373,19 +393,40 @@ input[type="radio"]:checked + label {
     margin-left: 0;
   }
 
-  
-
   .profile-name {
     font-size: 16px; 
     padding-top: 10px;
     border-bottom: 1px solid	 #516d31;
   }
 
-    .profile-text{
-        box-sizing: border-box;
-        width: 100%;
-        padding: 10px 30px 5px 30px;
-    }
+  .profile-text{
+    box-sizing: border-box;
+    width: 200px;
+    padding: 10px 20px 178px 30px;
+  }
+
+  .settings-tab {
+    position: static;
+    margin-top: 15px;
+    margin-left: 0;
+    width: fit-content;
+  }
+
+  .settings-tab ul {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .settings-tab li {
+    margin: 0;
+  }
+
+  .settings-tab a {
+    font-size: 10px;
+    padding: 7px 11px;
+    min-width: 95px;
+    letter-spacing: 0.6px;
+  }
 
   .sticky-container {
     height: 150px; /* 付箋エリアの高さ調整 */
@@ -396,7 +437,6 @@ input[type="radio"]:checked + label {
     width: 150px;
     height: 130px;
     font-size: 12px;
-    /* .sticky-note { */
   position: absolute; /* ← 重ねるにはこれが必要 */
   top: 28px;
   left: 5px;
@@ -445,11 +485,10 @@ input[type="radio"]:checked + label {
   /* display:block; */
   margin: 0;
   position:relative;
-  top: 700px;
+  top: 730px;
   font-size:15px;
   box-shadow:none;
   padding: 3px 9px;
-  border-bottom: 1px solid	 #516d31;
   
 
 }
@@ -463,21 +502,15 @@ input[type="radio"]:checked + label {
   font-size: 12px;
 }
 
-
-
-
 .tab-wrapper{
 margin-top:270px;
 }
-
 
 .tab-content {
     display: flex !important;
     flex-direction: column;
     gap: 60px; /* カード間の余白 */
   }
-
-
 
 }
 
@@ -523,6 +556,26 @@ margin-top:270px;
   max-width: 280px;
   margin-top: 20px;
 }
+
+.settings-tab {
+  position: static;
+  margin-top: 12px;
+  margin-left: 0;
+  width: fit-content;
+}
+
+.settings-tab ul {
+  flex-direction: row;
+  gap: 8px;
+}
+
+.settings-tab a {
+  font-size: 9px;
+  padding: 5px 9px;
+  min-width: 85px;
+  letter-spacing: 0.5px;
+}
+
 .sticky-container {
   position: relative; /* ← これが大事！ */
 }
