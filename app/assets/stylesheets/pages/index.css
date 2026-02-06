@@ -91,6 +91,61 @@
 
 }
 
+.sort-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 80px;
+  margin-bottom: 60px;
+  opacity: 0.85;
+}
+
+.sort-btn {
+  position: relative;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14px;
+  color: #7a7070;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  padding: 12px 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  opacity: 0.6;
+}
+
+.sort-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(122, 112, 112, 0.5) 0%, rgba(122, 112, 112, 0.3) 100%);
+  transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.sort-btn:hover {
+  opacity: 0.95;
+  color: #5a5048;
+}
+
+.sort-btn:hover::after {
+  width: 100%;
+}
+
+.sort-btn.active {
+  opacity: 1;
+  color: #5a5048;
+  font-weight: 500;
+}
+
+.sort-btn.active::after {
+  width: 100%;
+  background: linear-gradient(90deg, rgba(90, 80, 72, 0.6) 0%, rgba(90, 80, 72, 0.4) 100%);
+}
+
 .spot-list {
   display: flex;
   flex-wrap: wrap;
