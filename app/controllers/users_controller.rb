@@ -4,12 +4,12 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
-        @spots = @user.spots
+        @spots = @user.spots.order(created_at: :desc)
     end
     
     def mypage
         @user = current_user
-        @spots = @user.spots
+        @spots = @user.spots.order(created_at: :desc)
         render :show
     end
 

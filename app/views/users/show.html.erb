@@ -83,15 +83,15 @@
   </div>
 
   <div class="tab-content" id="content2">
-    <% @user.liked_spots.each do |spot|%>
+    <% @user.likes.order(created_at: :desc).each do |like|%>
       <div class= "mypage-spots">
-        <%= link_to spot_path(spot), class: "spot-link" do %>
+        <%= link_to spot_path(like.spot), class: "spot-link" do %>
           <div class= "spot-thumbnail">
-            <%= image_tag spot.images.first.variant(resize_to_limit: [150, 150])%>
+            <%= image_tag like.spot.images.first.variant(resize_to_limit: [150, 150])%>
           </div>
 
           <div class= "mypage-spot-title">
-            <%= truncate(spot.title, length: 12) %>
+            <%= truncate(like.spot.title, length: 12) %>
           </div>
         <% end %>
       </div>
