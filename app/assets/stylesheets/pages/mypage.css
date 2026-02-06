@@ -223,13 +223,13 @@ input[type="radio"]:checked + label {
 }
 
 /* 選択された方のコンテンツを強制的に表示する */
-#tab1:checked ~ #content1,
-#tab2:checked ~ #content2 {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
-  margin-top: 1rem;
-}
+  #tab1:checked ~ #content1,
+  #tab2:checked ~ #content2 {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    margin-top: 1rem;
+  }
 
 .mypage-spots{
   box-sizing: border-box; /* パディングやボーダーを幅に含める */
@@ -303,8 +303,35 @@ input[type="radio"]:checked + label {
     height: 120px;    
   }
 }
-/* ここまで見た */
+
 @media screen and (max-width: 850px) {
+
+  .sticky-link a{
+    margin-left: 20px;
+    margin-top: 0;
+    position: relative;
+    top: 835px;
+  }
+
+  .settings-tab {
+    position: static;
+  }
+
+  .settings-tab > ul {
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  .settings-tab a {
+    font-size: 10px;
+    padding: 7px 9px;
+  }
+
+  .flash-alert{
+    padding: 2px 6px;
+    font-size: 11px;
+    margin-top: 1rem;
+  }
 
   .profile-wrapper {
     flex-direction: column;
@@ -319,19 +346,12 @@ input[type="radio"]:checked + label {
   }
 
   .profile-box {
-    /* flex-basis: 100%; 横幅100%にして、1列に並べる */
-    margin-left: 0;
     display:flex;
     align-items:flex-start;
     flex-direction: column; 
-
   }
 
-  
-
   .profile-name {
-    display:inline-block;
-    font-size: 16px; 
     padding-top: 10px;
     padding-right:70px;
     border-bottom: 1px solid	 #516d31;
@@ -343,73 +363,9 @@ input[type="radio"]:checked + label {
     padding: 10px 20px 178px 30px;
   }
 
-  .settings-tab {
-    position: static;
-    margin-top: 15px;
-    margin-left: 0;
-    width: fit-content;
-  }
-
-  .settings-tab > ul {
-    flex-direction: row;
-    gap: 5px;
-  }
-
-  .settings-tab a {
-    font-size: 10px;
-    padding: 7px 11px;
-    min-width: 95px;
-    letter-spacing: 0.6px;
-  }
-
-  .sticky-container {
-    display: grid;
-    grid-template-columns: repeat(3, 160px);
-    width: 100%;
-  }
-
   .sticky-note {
     width: 150px;
     height: 130px;
-    font-size: 12px;
-    position: relative;
-    margin-left: 20px;
-    opacity: 0.9;
-  }
-
-  /* 無造作に傾き + ゆらぎ */
-  .sticky-note:nth-child(odd) {
-    transform: rotate(-2deg) scale(0.99) translateY(-1px);
-  }
-
-  .sticky-note:nth-child(even) {
-    transform: rotate(1.5deg) scale(1.01) translateY(1px);
-  }
-
-  /* ホバー時に前へ動く */
-  .sticky-note:hover {
-    transform: rotate(0deg) scale(1.02);
-    z-index: 10;
-    opacity: 1;
-  } 
-
-  .sticky-link a{
-    display: inline-block;
-    margin-top: 1rem;
-    margin-left: 20px;
-    margin-bottom: 20px;
-    position: relative;
-    top: 820px;
-    font-size: 14px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    padding: 6px 13px;
-  }
-
-  .flash-alert{
-    font-size: 13px;
-    display: inline-block;
-    background-color: #aab9bb;
-    margin-top: 1rem;
     margin-left: 20px;
   }
 
@@ -417,25 +373,12 @@ input[type="radio"]:checked + label {
     margin-top: 285px;
   }
   
-  .tab-content {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: center;
-    gap: 60px; /* カード間の余白 */
+  #tab1:checked ~ #content1,
+  #tab2:checked ~ #content2 {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-
-
-  /* .mypage-spots {
-    padding: 100px 70px;
-    margin-left: 170px;
-  } */
-
 }
-
-
-
-/* ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーここから最小スマホ */
 
 @media screen and (max-width: 635px) {
 
