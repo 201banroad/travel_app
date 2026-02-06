@@ -1,23 +1,92 @@
+.sticky-link a {
+  display: inline-block;
+  font-size: 14px;
+  text-decoration: none;
+  margin-top: 1rem;
+  margin-left: 31rem;
+  margin-bottom: 20px;
+  color: #6b7280;
+  padding: 6px 13px;
+  border-radius: 6px;
+  border: 1px solid rgba(209, 213, 219, 0.5);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  opacity: 0.85;
+  letter-spacing: 0.5px;
+}
+
+.sticky-link a:hover{
+  background: linear-gradient(135deg, rgba(180, 220, 240, 0.7), rgba(200, 235, 250, 0.7));
+  transform: translateY(-0.5px);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.12);
+  opacity: 1;
+}
+
+.settings-tab {
+  position: absolute;
+  top: 50px;
+  right: 70px;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+
+.settings-tab > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.settings-tab a {
+  text-decoration: none;
+  color: #6b6b5f;
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: block;
+  padding: 7px 12px;
+  border-radius: 2px;
+  background: rgba(249, 241, 228, 0.45);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(200, 180, 160, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  text-align: center;
+  min-width: 110px;
+  opacity: 0.75;
+}
+
+.settings-tab a:hover {
+  color: #3d6b52;
+  background: rgba(249, 241, 228, 0.65);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.4);
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.flash-alert{
+  font-size: 13px;
+  display: inline-block;
+  background-color: #aab9bb;
+  margin-top: 1rem;
+  margin-left: 2rem;
+}
+
+
 .profile-wrapper{
   width: 100%;
   display: flex;
-  gap: 110px;
-  justify-content: center;  /* 横方向の中央寄せ */
-
-  /* box-sizing: border-box; */
+  gap: 130px;
+  justify-content: center; 
 }
 
 .profile-image-text{
-    display: flex;
-
+  display: flex;
 }
 
-
 .profile-box {
-  /* gap: 20px; */
   align-items: center;
   margin-top: 50px;
-  
 }
 
 .avatar {
@@ -26,7 +95,6 @@
   border-radius: 10px;
   object-fit: cover;
   box-shadow: 2px 4px 18px rgba(0, 0, 0, 0.534);
-  /* margin-right:10rem; */
   opacity: 0.8;
 }
 
@@ -60,94 +128,6 @@
   opacity: 0.8;
 }
 
-.settings-tab {
-  position: absolute;
-  top: 50px;
-  right: 70px;
-  font-family: 'Zen Kaku Gothic Antique', sans-serif;
-  z-index: 10;
-}
-
-.settings-tab ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.settings-tab li {
-  margin: 0;
-}
-
-.settings-tab a {
-  text-decoration: none;
-  color: #6b6b5f;
-  font-weight: 400;
-  font-size: 12px;
-  letter-spacing: 1px;
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  display: block;
-  padding: 10px 16px;
-  border-radius: 20px;
-  background: rgba(249, 241, 228, 0.45);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(200, 180, 160, 0.2);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02), inset 0 1px 2px rgba(255, 255, 255, 0.3);
-  text-align: center;
-  min-width: 110px;
-  opacity: 0.75;
-}
-
-.settings-tab a:hover {
-  color: #3d6b52;
-  background: rgba(249, 241, 228, 0.65);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.4);
-  opacity: 1;
-  transform: translateY(-2px);
-}
-
-/* マイページの付箋ーーーーーーーーーーーーーーー */
-.flash-alert{
-  font-size: 13px;
-
-  display: inline-block;
-  background-color: #aab9bb;
-  margin-top: 1rem;
-  margin-left: 2rem;
-
-}
-
-.sticky-link a {
-  display: inline-block;
-  font-size: 14px;
-  text-decoration: none;
-  margin-top: 1rem;
-  margin-left: 31rem;
-  margin-bottom: 20px;
-  background: transparent;
-  color: #6b7280;
-  padding: 6px 13px;
-  border-radius: 6px;
-  border: 1px solid rgba(209, 213, 219, 0.5);
-  font-weight: 300;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s ease;
-  opacity: 0.85;
-  letter-spacing: 0.5px;
-}
-
-.sticky-link a:hover{
-  background: linear-gradient(135deg, rgba(180, 220, 240, 0.7), rgba(200, 235, 250, 0.7));
-  transform: translateY(-0.5px);
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.12);
-  opacity: 1;
-}
-
-
-
-
 .sticky-container {
   position: relative;
   display: grid;
@@ -155,12 +135,7 @@
   width: 100%;
 }
 
-
 .sticky-note {
-  /* position: relative; 削除ボタンのために残す */
-
-  margin-left: 20px;
-  word-break: break-word;
   font-size: 12px;
   background: linear-gradient(135deg, rgba(255, 253, 248, 0.7), rgba(255, 248, 240, 0.7));
   padding: 1.2rem;
@@ -197,13 +172,10 @@
   opacity: 1;
 } 
 
-
-
-.delete-btn{/* ボタンの感じを消す */
+.delete-btn{
   position: absolute;
   top: 6px;
   right: 6px;
-  background-color: transparent;
   background: none;    
   border: none;            
   font: inherit;           /* ボタン特有のフォントをリセット */
@@ -220,65 +192,6 @@
   transform: scale(1.1);
 }
 
-.tab-content {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr); /* 3列固定 */
-
-  /* Tab1contentでやってるのでdisplay:flex;は不要 */
-  display: none; /* タブを選んでいない時は投稿非表示 */
-  width: 100%;
-}
-
-
-.mypage-spots{
-
-  box-sizing: border-box; /* パディングやボーダーを幅に含める */
-  padding: 100px 70px;
-  margin-left: 30px;
-  opacity: 0.7;
-  border-bottom: 1px solid rgba(146, 115, 84, 0.3);
-
-}
-
-.mypage-spots img{
-  box-shadow: 4px 4px 14px black;
-  /* display: inline-block; transformを効かせるために必要な場合あり */
-  transition: all 0.5s ease; /* ← ふんわり動かす */
-
-}
-
-.mypage-spots img:hover {
-  transform: translateY(-2px);
-  box-shadow:  4px 6px 13px rgb(0, 0, 0);
-  
-}
-
-.spot-link {
-  text-decoration: none;
-  color: inherit;
-  
-}
-
-
-
-.mypage-spot-title {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);  
-  white-space: nowrap;/* 改行されないように */
-  text-overflow: ellipsis; /* テキストが親要素の幅を超えた場合に、「…」と表示 */
-  max-width: 170px; 
-}
-
-
-
-/* 各ラジオボタンに応じて表示 */
-#tab1:checked ~ #content1,
-#tab2:checked ~ #content2 {
-  display: flex;
-  /* flex-wrap: wrap; */
-  justify-content: center;
-  margin-top: 1rem;
-}
-
 .tab-wrapper {
   margin-top: 25px;
 }
@@ -291,9 +204,8 @@
   margin-right: 0.5rem;
   border-radius: 5px 5px 0 0;
   border: 1px solid #3565ac35;
+  border-bottom: 1px solid #3565ac;
   opacity: 0.8;
-
-
 }
 
 /* チェックされたタブの見た目 */
@@ -306,6 +218,52 @@ input[type="radio"]:checked + label {
 .tab-wrapper input[type="radio"] {
   display: none;
 }
+
+.tab-content {
+  display: none;
+}
+
+/* 選択された方のコンテンツを強制的に表示する */
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2 {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.mypage-spots{
+  box-sizing: border-box; /* パディングやボーダーを幅に含める */
+  padding: 100px 70px;
+  /* margin-left: 30px; */
+  opacity: 0.7;
+  border-bottom: 1px solid rgba(146, 115, 84, 0.3);
+}
+
+.mypage-spots img{
+  box-shadow: 4px 4px 14px black;
+  transition: all 0.5s ease;
+}
+
+.mypage-spots img:hover {
+  transform: translateY(-2px);
+  box-shadow:  4px 6px 13px rgb(0, 0, 0);
+}
+
+.spot-link {
+  text-decoration: none;
+  color: inherit; 
+}
+
+.mypage-spot-title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);  
+  white-space: nowrap;/* 改行されないように */
+  text-overflow: ellipsis; /* テキストが親要素の幅を超えた場合に、「…」と表示 */
+  max-width: 170px; 
+}
+
+/* ーーーーーーーーーーーーーーーーーーーここまで確認 */
+
 
 /* ここからユーザー編集ページ */
 .user-edit-wrapper{
@@ -321,8 +279,6 @@ input[type="radio"]:checked + label {
 
 
 /* ここからレスポンシブ------------------------------------- */
-
-/* タブレット用 (1024px以下) */
 @media screen and (max-width: 1100px) {
   
   .profile-wrapper {
@@ -352,7 +308,7 @@ input[type="radio"]:checked + label {
     right: 30px;
   }
 
-  .settings-tab ul {
+  .settings-tab > ul {
     gap: 10px;
   }
 
@@ -424,13 +380,9 @@ input[type="radio"]:checked + label {
     width: fit-content;
   }
 
-  .settings-tab ul {
+  .settings-tab > ul {
     flex-direction: row;
     gap: 5px;
-  }
-
-  .settings-tab li {
-    margin: 0;
   }
 
   .settings-tab a {
@@ -565,7 +517,7 @@ input[type="radio"]:checked + label {
   width: fit-content;
 }
 
-.settings-tab ul {
+.settings-tab > ul {
   flex-direction: row;
   gap: 8px;
 }

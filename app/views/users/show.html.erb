@@ -1,7 +1,4 @@
 
-  
-
-  
   <div class="sticky-link" >
       <%= link_to "付箋を貼る", new_post_it_path %>
   </div>
@@ -43,8 +40,8 @@
   </div>
   
   <div class="sticky-container">
-    <% @user.post_its.limit(5).each_with_index do |post_it, i| %>
-      <div class="sticky-note" style="--i:<%= i %>">
+    <% @user.post_its.limit(5).each do |post_it| %>
+      <div class="sticky-note">
         <%= simple_format(post_it.content) %>
         <% if user_signed_in? && current_user == @user %>
           <%= button_to "×", post_it_path(post_it), method: :delete, class: "delete-btn" %>
@@ -59,7 +56,7 @@
 
 <div class="tab-wrapper">
   <input type="radio" name="tab" id="tab1" checked>
-  <label for="tab1"><%= @user.name %></label>
+  <label for="tab1">投稿</label>
 
   <input type="radio" name="tab" id="tab2">
   <label for="tab2">いいねした投稿</label>
