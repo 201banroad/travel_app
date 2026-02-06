@@ -12,6 +12,11 @@
         </p>
     </div>
 
+    <div class="sort-buttons">
+        <%= link_to "新しい順", spots_path(sort: 'newest'), class: "sort-btn #{@sort == 'newest' ? 'active' : ''}" %>
+        <%= link_to "いいね多い順", spots_path(sort: 'likes'), class: "sort-btn #{@sort == 'likes' ? 'active' : ''}" %>
+    </div>
+
     <div class="spot-list">
       <% @spots.each do |spot| %>
         <%= link_to spot_path(spot), class: "spot-card-link" do %>

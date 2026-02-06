@@ -2,7 +2,19 @@ class SpotsController < ApplicationController
 
     # 一覧ページ
     def index 
-        @spots = Spot.all
+        @sort = params[:sort] || 'newest'
+        
+        case @sort
+        when 'newest'
+            @spots = Spot.order(created_at: :desc)
+        when 'likes'
+            @spots = Spot.left_joins(:likes)
+                         .group('spots.id')
+                         .select('spots.*, COUNT(likes.id) as likes_count')
+                         .order('likes_count DESC, spots.created_at DESC')
+        else
+            @spots = Spot.order(created_at: :desc)
+        end
     end
 
     #  詳細ページ
