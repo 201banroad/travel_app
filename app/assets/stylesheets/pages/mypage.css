@@ -382,158 +382,45 @@ input[type="radio"]:checked + label {
 
 @media screen and (max-width: 635px) {
 
-  /* 外側の不要な余白を削除 */
-/* body{ */
-  /* padding: 0;
-  margin: 0; */
-  /* margin-left:2.5rem; */
-    /* margin-right:2.5rem; */
+  .sticky-link a{
+    /* margin: 0; */
+    top: 600px;
+  }
 
-
-/* } */
+  .flash-alert{
+    margin: 0;
+    position:relative;
+    top: 250px;
+    left: 20px;
+    font-size: 12px;
+  }
 
   .profile-wrapper{
-  margin: 0;
-  /* box-sizing: border-box; */
-  /* width:100% */
-
-}
-
-.avatar{
-  width: 130px;
-  height: 130px;
-}
-
-.profile-name{
-  font-size: 14px; 
-  padding-top: 10px;
-  border-bottom: 1px solid	 #516d31;
-}
-
-.profile-text{
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 300px;
-  min-width: 250px;
-  padding: 10px 30px 5px 30px;
-}
-
-.profile-box{
-  max-width: 280px;
-  margin-top: 20px;
-}
-
-.settings-tab {
-  position: static;
-  margin-top: 12px;
-  margin-left: 0;
-  width: fit-content;
-}
-
-.settings-tab > ul {
-  flex-direction: row;
-  gap: 8px;
-}
-
-.settings-tab a {
-  letter-spacing: 0.5px;
-}
-
-.sticky-container {
-  position: relative; /* ← これが大事！ */
-}
-
-.sticky-note {
-
-  width: 120px;
-  height: 100px;
-  font-size: 12px;
-  position: absolute; 
-  top: 28px;
-  left: 5px;
-  transform: rotate(-1deg); /* 少し傾けて「無造作感」を演出 */
-  z-index: 1;
-  opacity: 0.9;
-}
-
-/* 少しずつズラして見せたい場合 */
-.sticky-note:nth-child(2) {
-  top: 25px;
-  left: 30px;
-  /* transform: rotate(1deg); */
-  z-index: 2;
-}
-
-.sticky-note:nth-child(3) {
-  top: 27px;
-  left: 55px;
-  transform: rotate(-1deg);
-  z-index: 3;
-}
-
-.sticky-note:nth-child(4) {
-  top: 29px;
-  left: 80px;
-  transform: rotate(-1deg);
-  z-index: 4;
-}
-
-.sticky-note:nth-child(5) {
-  top: 26px;
-  left: 105px;
-  transform: rotate(-1deg);
-  z-index: 5;
-}
-/* ホバー時に前へ動く */
-.sticky-note:hover {
-  transform: rotate(0deg) scale(1);
-  transition: transform 0.1s ease;
-  z-index: 10;
-  opacity: 1;
-
-} 
-
-.sticky-link a{
-  /* display:block; */
-  margin: 0;
-  position:relative;
-  top: 600px;
-  font-size:13px;
-  box-shadow:none;
-  padding: 3px 9px;
-}
-
-.sticky-link a:hover {
-  transform:none;
-}
-
-.flash-alert{
-  margin: 0;
-  position:relative;
-  top: 600px;
-  left: 20px;
-  font-size: 12px;
-}
-
-
-.tab-wrapper{
-margin-top:100px;
-}
-
-/* .tab-wrapper label[for="tab1"] { */
-/* margin-left:20px; */
-/* } */
-
-.tab-content {
-    display: flex !important;
-    flex-direction: column;
-    gap: 60px; /* カード間の余白 */
+    margin: 0;
   }
 
-  .mypage-spots {
-    margin:0;
+  .profile-box{
+    margin-top: 20px;
   }
 
+  .avatar{
+    width: 130px;
+    height: 130px;
+  }
+
+  .profile-text{
+    max-width: 300px;
+    min-width: 250px;
+    padding: 10px 30px 5px 30px;
+  }
+
+  .sticky-container {
+    grid-template-columns: repeat(5, 40px);
+  }
+
+  .tab-wrapper{
+    margin-top:130px;
+  }
 
 }
 
