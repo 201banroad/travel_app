@@ -1,6 +1,10 @@
 
   <div class="sticky-link" >
-      <%= link_to "付箋を貼る", new_post_it_path %>
+      <% if user_signed_in? && current_user == @user %>
+        <%= link_to "付箋を貼る", new_post_it_path %>
+      <% else %>
+        <a class="sticky-link">付箋を貼る</a>
+      <% end %>
   </div>
 
 <% if user_signed_in? && current_user ==@user %>
