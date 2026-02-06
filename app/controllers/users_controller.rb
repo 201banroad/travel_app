@@ -4,9 +4,7 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
-        @spots = @user.spots  # このログイン中ユーザーの投稿をまとめて@spotsに入れる
-        @liked_spots = @user.liked_spots #そのユーザーがいいねした投稿
-
+        @spots = @user.spots
     end
     
     def mypage
