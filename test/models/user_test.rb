@@ -43,8 +43,11 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "should destroy associated spots when user is destroyed" do
-    @user.spots.create!(name: "Test Spot", latitude: 35.6762, longitude: 139.6503)
-    spot_id = @user.spots.first.id
+    spot = @user.spots.build(title: "Test Spot", location: "Tokyo", description: "A test spot")
+    # Attach a dummy image
+    spot.images.attach(io: StringIO.new("fake image"), filename: "test.jpg", content_type: "image/jpeg")
+    spot.save!
+    spot_id = spot.id
     @user.destroy
     assert_nil Spot.find_by(id: spot_id)
   end

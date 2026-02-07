@@ -1,18 +1,26 @@
 require "test_helper"
 
 class PostItControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    @user = users(:one)
+    @post_it = post_its(:one)
+  end
+
   test "should get new" do
-    get post_it_new_url
+    sign_in @user
+    get new_post_it_url
     assert_response :success
   end
 
   test "should get create" do
-    get post_it_create_url
-    assert_response :success
+    sign_in @user
+    post post_its_url, params: { post_it: { content: "Test content" } }
+    assert_response :redirect
   end
 
   test "should get destroy" do
-    get post_it_destroy_url
-    assert_response :success
+    sign_in @user
+    delete post_it_url(@post_it)
+    assert_response :redirect
   end
 end

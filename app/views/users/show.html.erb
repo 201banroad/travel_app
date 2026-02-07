@@ -71,7 +71,9 @@
         <%= link_to spot_path(spot), class: "spot-link" do %>
 
           <div class= "spot-thumbnail">
-            <%= image_tag spot.images.first.variant(resize_to_limit: [150, 150])%>
+            <% if spot.images.first.present? %>
+              <%= image_tag spot.images.first.variant(resize_to_limit: [150, 150])%>
+            <% end %>
           </div>
 
           <div class= "mypage-spot-title">
@@ -87,7 +89,9 @@
       <div class= "mypage-spots">
         <%= link_to spot_path(spot), class: "spot-link" do %>
           <div class= "spot-thumbnail">
-            <%= image_tag spot.images.first.variant(resize_to_limit: [150, 150])%>
+            <% if spot.images.first.present? %>
+              <%= image_tag spot.images.first.variant(resize_to_limit: [150, 150])%>
+            <% end %>
           </div>
 
           <div class= "mypage-spot-title">

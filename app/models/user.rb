@@ -19,7 +19,6 @@ class User < ApplicationRecord
   end
 
     
-# 同じmailでは登録できないように
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
