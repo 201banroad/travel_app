@@ -14,18 +14,16 @@ class Spot < ApplicationRecord
 
 
 
-    # 画像以外投稿できないバリテーション
     validate :images_must_be_images
-    # 画像の枚数制限
     validate :images_limit
 
     # 写真の添付設定
     has_many_attached :images
 
+    # アソシエーション
     belongs_to :user, optional: true
-    # いいねの設定
     has_many :likes, dependent: :destroy
-    has_many :liked_users, through: :likes, source: :user
+    # has_many :liked_users, through: :likes, source: :user
 
     private
 

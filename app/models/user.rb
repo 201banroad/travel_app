@@ -25,17 +25,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :spots # ← ユーザーは投稿をたくさん持ってるよ
-
-  # ユーザーを削除したときに、その人の投稿も全部一緒に削除される
+  # アソシエーション
   has_many :spots, dependent: :destroy
-  # これは付箋
+  has_many :likes, dependent: :destroy
+  # has_many :liked_spots, through: :likes, source: :spot
   has_many :post_its, dependent: :destroy
 
-
-  # いいねの設定
-  has_many :likes, dependent: :destroy
-  has_many :liked_spots, through: :likes, source: :spot
 
 
   # アイコン画像の設定
