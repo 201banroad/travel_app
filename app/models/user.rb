@@ -5,7 +5,7 @@ class User < ApplicationRecord
     uniqueness: true        # 他のユーザーと同じ名前はダメ
 
 
-  validates :profile, length: {maximum: 70}
+  validates :profile, length: { maximum: 70 }
 
 
 
@@ -18,7 +18,7 @@ class User < ApplicationRecord
     end
   end
 
-    
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -34,6 +34,4 @@ class User < ApplicationRecord
 
   # アイコン画像の設定
   has_one_attached :avatar
-
- 
 end

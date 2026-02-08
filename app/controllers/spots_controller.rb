@@ -1,7 +1,6 @@
 class SpotsController < ApplicationController
-
     # 一覧ページ
-    def index 
+    def index
         @spots = Spot.order(created_at: :desc)
     end
 
@@ -22,7 +21,7 @@ class SpotsController < ApplicationController
         if @spot.save
             redirect_to @spot
         else
-            render 'new', status: :unprocessable_entity
+            render "new", status: :unprocessable_entity
         end
     end
 
@@ -31,13 +30,13 @@ class SpotsController < ApplicationController
     #     @spot = Spot.find(params[:id])
     # end
 
-    
+
     # def update
     #     @spot = Spot.find(params[:id])
-    #     if @spot.update(spot_params) 
-    #         redirect_to @spot 
+    #     if @spot.update(spot_params)
+    #         redirect_to @spot
     #     else
-    #         render 'edit', status: :unprocessable_entity 
+    #         render 'edit', status: :unprocessable_entity
     #     end
     # end
 
@@ -48,14 +47,10 @@ class SpotsController < ApplicationController
         redirect_to spots_path
     end
 
-   
-    private 
+
+    private
     # ストロングパラメーター、permitの中の項目だけ許可するたとえば項目をLikeって悪いやつに書き換えられたら保存されない、画像は複数枚OKなので[]配列で許可してる。
     def spot_params
-        params.require(:spot).permit(:title, :location, :description, :name, images:[])
+        params.require(:spot).permit(:title, :location, :description, :name, images: [])
     end
-
-
-
-
 end

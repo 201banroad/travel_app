@@ -23,7 +23,6 @@ class PostItsController < ApplicationController
     @post_it = current_user.post_its.find(params[:id])
     @post_it.destroy
     redirect_to mypage_path
-
   end
 
   private

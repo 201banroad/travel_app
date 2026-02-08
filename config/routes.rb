@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
- 
-
-
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -14,31 +11,28 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  root 'spots#index'#URLをルートでも繋がるようにする処理
+  root "spots#index"# URLをルートでも繋がるようにする処理
 
 
-  
+
    devise_for :users, controllers: {
     registrations: "users/registrations"
   }
 
 
- 
+
   # 「ユーザーが /mypage にアクセスしたら UsersController の mypage を実行して、mypage_path って名前で使えるようにしておいてね！」って処理
   get "mypage", to: "users#mypage", as: "mypage"
 
   # 他人のマイページも見れるように、ヘルパーも使えるように
-  resources :users, only: [:show]
-  
- # 投稿などのルーティング自動生成できるコード
-# いいねの操作をURLでできるように
-  resources :spots, only: [:index, :show, :new, :create, :destroy] do
-    resource :like, only: [:create, :destroy]
+  resources :users, only: [ :show ]
+
+  # 投稿などのルーティング自動生成できるコード
+  # いいねの操作をURLでできるように
+  resources :spots, only: [ :index, :show, :new, :create, :destroy ] do
+    resource :like, only: [ :create, :destroy ]
   end
 
 
-  resources :post_its, only: [:new, :create, :destroy]
-
-
-
+  resources :post_its, only: [ :new, :create, :destroy ]
 end

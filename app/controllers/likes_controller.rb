@@ -5,7 +5,7 @@ class LikesController < ApplicationController
     # いいねをする処理
     def create
         @spot = Spot.find(params[:spot_id])
-        current_user.likes.create(spot: @spot)#ユーザー特定と、スポットIDを特定する処理（カラムに入れる処理）
+        current_user.likes.create(spot: @spot)# ユーザー特定と、スポットIDを特定する処理（カラムに入れる処理）
         redirect_to spot_path(@spot)
     end
 
@@ -16,5 +16,4 @@ class LikesController < ApplicationController
         like.destroy if like
         redirect_to spot_path(@spot)
     end
-
 end

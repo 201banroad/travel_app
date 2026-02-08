@@ -26,5 +26,4 @@ class SpotsControllerTest < ActionDispatch::IntegrationTest
     get new_spot_url
     assert_response :success
   end
-
 end

@@ -12,6 +12,4 @@ class PostIt < ApplicationRecord
       errors.add(:content, "は5行以内にしてください")
     end
   end
-
-
 end

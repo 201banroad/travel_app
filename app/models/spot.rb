@@ -50,5 +50,4 @@ class Spot < ApplicationRecord
       errors.add(:images, "は4枚以内でアップロードしてください")
     end
   end
-
 end
