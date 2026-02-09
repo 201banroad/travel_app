@@ -240,6 +240,9 @@ input[type="radio"]:checked + label {
 }
 
 .mypage-spots img{
+  width:150px;
+  height:150px;
+  object-fit: contain;
   box-shadow: 4px 4px 14px black;
   transition: all 0.5s ease;
 }
