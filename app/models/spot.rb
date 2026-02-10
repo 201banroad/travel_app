@@ -16,6 +16,7 @@ class Spot < ApplicationRecord
 
     validate :images_must_be_images
     validate :images_limit
+    validate :images_size_limit
 
     # 写真の添付設定
     has_many_attached :images
@@ -27,10 +28,21 @@ class Spot < ApplicationRecord
 
     private
 
+
   def images_must_be_images
     images.each do |image|
       unless image.content_type.starts_with?("image/")
         errors.add(:images, "は画像ファイルのみアップロードできます")
+      end
+    end
+  end
+
+  # 画像サイズ制限（10MBまで）
+  def images_size_limit
+    max_size = 10.megabytes
+    images.each do |image|
+      if image.blob.byte_size > max_size
+        errors.add(:images, "は1枚あたり10MB以下にしてください")
       end
     end
   end

@@ -1,6 +1,22 @@
 require "test_helper"
+require "active_support/core_ext/numeric/bytes"
 
 class SpotTest < ActiveSupport::TestCase
+  test "image should be valid if exactly 10MB" do
+    @spot.images.purge
+    valid_image = StringIO.new("0" * 10.megabytes)
+    @spot.images.attach(io: valid_image, filename: "valid.jpg", content_type: "image/jpeg")
+    assert @spot.valid?
+  end
+
+  test "image should not exceed 10MB" do
+    @spot.images.purge
+    # 10MB + 1byte のダミーファイルを作成
+    big_image = StringIO.new("0" * (10.megabytes + 1))
+    @spot.images.attach(io: big_image, filename: "big.jpg", content_type: "image/jpeg")
+    assert_not @spot.valid?
+  end
+
   setup do
     @user = users(:one)
     @spot = @user.spots.build(
