@@ -243,13 +243,13 @@ input[type="radio"]:checked + label {
   width:150px;
   height:150px;
   object-fit: contain;
-  box-shadow: 4px 4px 14px black;
-  transition: all 0.5s ease;
+  /* box-shadow: 4px 4px 24px rgb(105, 104, 104); */
+  transition: all 0.9s ease;
 }
 
 .mypage-spots img:hover {
   transform: translateY(-2px);
-  box-shadow:  4px 6px 13px rgb(0, 0, 0);
+  /* box-shadow:  4px 6px 13px rgb(0, 0, 0); */
 }
 
 .spot-link {
