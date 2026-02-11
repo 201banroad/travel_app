@@ -34,9 +34,9 @@ class User < ApplicationRecord
 
   # アイコン画像の設定
   validate :avatar_size_limit
-  
+
   private
-  
+
   def avatar_size_limit
     return unless avatar.attached?
     if avatar.blob.byte_size > 10.megabytes
