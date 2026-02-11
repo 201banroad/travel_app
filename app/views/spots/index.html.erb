@@ -17,7 +17,7 @@
         <%= link_to spot_path(spot), class: "spot-card-link" do %>
           <div class="spot-card">
             <% if spot.images.attached? %>
-              <%= image_tag spot.images.first.variant(format: :jpg) %>
+              <%= image_tag spot.images.first %>
             <% end %>
 
             <h3><%= spot.title %></h3>
