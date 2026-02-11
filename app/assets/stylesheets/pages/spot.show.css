@@ -152,7 +152,7 @@
 
 .paper-content p {
   max-height: 1300px;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 2.7;
   color: #5a5a5a;
   font-family: 'Sawarabi Mincho', serif;
@@ -164,7 +164,8 @@
   text-underline-offset: 8px;
   /* writing-mode: vertical-rl; */
   text-orientation: upright;
-  text-align: end;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+
 
 }
 
