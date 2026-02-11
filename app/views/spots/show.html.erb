@@ -4,7 +4,7 @@
       <div class="paper-left-section">
         <% if @spot.images.attached? %>
           <% @spot.images.each do |image| %>
-            <img src="<%= url_for(image) %>" alt="<%= image_alt_text(image) %>" class="gallery-image" />
+            <img src="<%= url_for(image.variant(format: :jpg)) %>" alt="<%= image_alt_text(image) %>" class="gallery-image" />
           <% end %>
         <% end %>
 

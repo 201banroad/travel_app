@@ -26,7 +26,7 @@
 
     <div class="profile-box">
       <% if @user.avatar.attached? %>
-        <%= image_tag url_for(@user.avatar), class: "avatar" %>
+        <%= image_tag @user.avatar.variant(format: :jpg), class: "avatar" %>
       <% else %>
         <%= image_tag "default_avatar.png", class: "avatar" %>
       <% end %>
@@ -72,7 +72,7 @@
 
           <div class= "spot-thumbnail">
             <% if spot.images.first.present? %>
-              <%= image_tag spot.images.first %>
+              <%= image_tag spot.images.first.variant(format: :jpg) %>
             <% end %>
           </div>
 
@@ -90,7 +90,7 @@
         <%= link_to spot_path(spot), class: "spot-link" do %>
           <div class= "spot-thumbnail">
             <% if spot.images.first.present? %>
-              <%= image_tag spot.images.first %>
+              <%= image_tag spot.images.first.variant(format: :jpg) %>
             <% end %>
           </div>
 
