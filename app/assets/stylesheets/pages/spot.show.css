@@ -164,6 +164,7 @@
   text-underline-offset: 8px;
   /* writing-mode: vertical-rl; */
   text-orientation: upright;
+  text-align: end;
 
 }
 
