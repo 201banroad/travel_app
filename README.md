@@ -1,24 +1,82 @@
-# README
+##  ■ 名前もつかない日々を教えて
+![アプリ画面](readme_image/app.png)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+##  ■ アプリURL
+https://travel-app-6yfc.onrender.com/spots
+##  ■ アプリの概要
+生活を、本のような雰囲気で、写真と共に投稿できるアプリです。
+## ■ アプリを作ったキッカケ
 
-* Ruby version
+SNSに写真と文章を投稿すると写真の方が目立ち、文章がワンポイントとしての要素でしかなくなってしまうことに気付き、<br>
+「文章と写真どちらも同じくらい存在感や雰囲気が欲しい、文章にも投稿を彩る能力が欲しい」という気持ちから開発しました。
 
-* System dependencies
+## ■ 特徴・コンセプト
+- 文章に雰囲気や存在感を持たせるために、縦書きの本のような雰囲気に<br>
+- 人気の投稿がより見られるのではなく、どの投稿も人目に入るようにしたく、表示順は新着順のみにした
+- マイページに付箋を貼る機能があり、やりたい事や行きたい場所を少し変わった形で表現することができる
 
-* Configuration
+## ■主な機能
+- ユーザー登録・ユーザー削除・ログイン機能
+- 記事投稿機能・投稿削除機能
+- 画像投稿機能
+    - S3に保存
+    - 投稿可能サイズ制限機能
+- いいね機能
+- レスポンシブ対応
+- 位置情報共有機能![アプリ画面](readme_image/gps.gif)
+- マイページ　ひとこと編集機能
+- マイページ　付箋を貼る機能
+- マイページ　投稿タブ、いいねタブ切り替え機能
 
-* Database creation
+## ■ 使用技術 
+### バックエンド
+- Ruby 3.4.3
+- Rails 8.0.2
+### フロントエンド
+- HTML
+- CSS
+### データベース
+- SQLite 3.43.2（開発）
+- PostgreSQL 18 (本番)
+### ストレージサービス
+- Amazon S3
+### インフラ / デプロイ
+- Render
+- Github(ソースコード管理)
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## ■動作環境
+次のものをインストールしてください：
 
-* Deployment instructions
+### 必須
+- Ruby 3.3.0以上
+- Rails 8.0以上
+- Node.js 20以上
+- SQLite 3.0以上（開発環境）
 
-* ...
+### セットアップ手順
+```bash
+# リポジトリのクローン
+git clone <repository-url>
+cd travel_app
+
+# Rubyの依存関係をインストール
+bundle install
+
+# JavaScriptの依存関係をインストール
+npm install
+
+# データベースのセットアップ
+rails db:create
+rails db:migrate
+
+# サーバーの起動
+./bin/dev
+```
+
+
+## 開発者
+[開発者情報]<br>
+X: https://x.com/p_0_one
