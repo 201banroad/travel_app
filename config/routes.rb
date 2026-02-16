@@ -27,5 +27,4 @@ Rails.application.routes.draw do
   end
 
   resources :post_its, only: [ :new, :create, :destroy ]
-
 end
