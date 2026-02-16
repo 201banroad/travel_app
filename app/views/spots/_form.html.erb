@@ -16,11 +16,11 @@
         <%= form.text_field :title %>
      </div>
      <div>
-        <%= form.label :location, '場所' %><br> 
+        <%= form.label :location, '場所（地名や固有名詞を書けば場所がマップで共有できます）' %><br> 
         <%= form.text_field :location %>
      </div>
      <div>
-        <%= form.label :description, '魅力を詳しく教えて...' %><span class="required-mark">*</span><br> 
+        <%= form.label :description, '感じたこと' %><span class="required-mark">*</span><br> 
         <%= form.text_area :description %>
      </div>
      <div>
@@ -28,7 +28,7 @@
          <input type="text" value="<%= current_user&.name || 'ゲスト' %>" readonly>
      </div>
      <div>
-         <%= form.label :images, '写真' %><span class="required-mark">*</span><br> 
+         <%= form.label :images, '写真（HEIC画像不可）' %><span class="required-mark">*</span><br> 
          <%= form.file_field :images, multiple: true %>
      </div>
      <div>
