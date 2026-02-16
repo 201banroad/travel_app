@@ -30,9 +30,13 @@ class Spot < ApplicationRecord
 
 
   def images_must_be_images
+    allowed_types = ["image/jpeg", "image/png", "image/gif", "image/webp"]
+    
     images.each do |image|
-      unless image.content_type.starts_with?("image/")
-        errors.add(:images, "は画像ファイルのみアップロードできます")
+      if image.content_type.in?(["image/heic", "image/heif"])
+        errors.add(:images, "HEICファイルは投稿できません。JPEGやPNGをお試しください。")
+      elsif !image.content_type.in?(allowed_types)
+        errors.add(:images, "対応している画像形式（JPEG、PNG、GIF、WebP）でアップロードしてください。")
       end
     end
   end
