@@ -80,6 +80,13 @@ body {
     margin-bottom: 30px;
   }
 
+  /* 必須マークスタイル */
+  .required-mark {
+    color: #dc3545;
+    font-weight: bold;
+    margin-left: 4px;
+  }
+
 @media screen and (max-width: 524px) {
   body {
     padding: 0 10px;
