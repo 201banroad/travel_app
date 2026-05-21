@@ -3,7 +3,7 @@
 ![アプリ画面](readme_image/app.png)
 
 
-##  ■ アプリURL
+##  ■ アプリURL（現在公開停止しています❌）
 https://travel-app-6yfc.onrender.com/spots<br>
 (ログインなしでも利用可能)
 
